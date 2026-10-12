@@ -1,95 +1,79 @@
-# Marina Vale — Website Description (current as of June 2026)
+# Marina Vale: Copy Deck (verified 2026-10-12)
 
-Compiled from *The Mortgage Dock AI Operating Blueprint v1* and the *Master AI Brain Pack*.
-Paste whichever block fits your page. All copy is education-first and compliance-aware
-(no guarantees of rates, approvals, or timelines).
+Every claim below was checked against the live Marina code (`tmd-marina-chat` v1.3.0,
+deployed 2026-09-29). It matches the copy on themortgagedock.com/marina/ after
+themortgagedock-max/themortgagedock-site PR #14 merges. Use these blocks for Google Business
+Profile, social bios, email signatures, partner one-pagers, and anything else off the site.
 
----
-
-## 1. One-liner (hero / meta description)
-
-> Marina Vale is The Mortgage Dock's AI mortgage concierge — your always-on, bilingual
-> guide to financing coastal Florida property, serving the Florida Keys, South Florida,
-> and Tampa coastal markets.
+House rules applied: no em or en dashes, "Eli Sanderlin" (never "Eli O."), no rate promises,
+"not a commitment to lend" near anything financial.
 
 ---
 
-## 2. Short bio (cards, about blurb, ~40 words)
+## 1. One-liner (bio, meta description, ~150 characters)
 
-> Meet Marina Vale, the AI mortgage concierge for The Mortgage Dock. Available 24/7 in
-> English and Spanish, she explains your coastal financing options in plain English,
-> points you to the right clarity tool, and connects you with Eli when you're ready —
-> all with zero pressure.
+> Marina Vale is a free AI mortgage concierge for coastal Florida. Flood zones, flood insurance
+> budgets, boat and bridge data, inspection reports, and financing, answered 24/7.
 
----
+## 2. Short bio (~50 words)
 
-## 3. Full description (about section)
+> Meet Marina Vale, The Mortgage Dock's AI mortgage concierge. Give her an address and she pulls
+> the flood zone, a flood insurance budget from real local policies, and the tide, depth, and
+> bridge data that matters if you own a boat. She reads inspection reports, answers 24/7, and
+> hands you to Eli Sanderlin when you are ready.
 
-**Meet Marina Vale — Your AI Mortgage Concierge**
+## 3. What she can do today
 
-Marina Vale is The Mortgage Dock's AI mortgage concierge and your first point of contact
-for financing coastal Florida property. She's calm, knowledgeable, and built to make the
-unique realities of Florida Keys, South Florida, and Tampa coastal financing feel simple.
+**Live lookups by address**
+- FEMA flood zone, special flood hazard area status, and base flood elevation
+- Flood insurance budget range from actual NFIP policies in that ZIP code and zone (a budget, not a quote)
+- Property basics (beds, baths, square feet, year built, last sale) and an estimated value range
+- NOAA tide predictions (48 hours), charted depths, and Army Corps maintained channel depth
+- The lowest fixed bridge between the dock and open water, checked against your boat's air draft
+- DockScore: a 0 to 100 rating of how well a waterfront property works for boating
+- Boat-first search: ranks waterfront areas in Florida, the Carolinas, and the Chesapeake by bridge clearance and depth
 
-Marina is available 24/7, speaks both English and Spanish, and leads with education — never
-pressure. She listens to your situation, explains it in plain English, recommends the right
-next step, and only asks for your details once she's already helped. When you're ready for a
-human, she hands you off to Eli O. Sanderlin for strategy and execution.
+**Documents, photos, voice**
+- Reads uploaded PDFs, inspection report links, and photos, then writes a Property Intelligence Brief
+- Voice: talk to her in a supported browser such as Chrome; she answers out loud
+- Save any longer answer as a PDF or a clean client copy to share
+- Add to your phone's home screen and she opens like an app
 
-**Her promise:** Coastal mortgage clarity before commitment.
+**Knowledge**
+- Coastal insurance: wind and flood as separate policies, Citizens, Risk Rating 2.0, elevation certificates
+- Condo and HOA risk: Milestone Inspections, SIRS, special assessments, warrantability
+- Loan program fit: conventional, jumbo, DSCR, bank statement, foreign national, VA, HELOC, non-warrantable condo
+- Investor math: how DSCR loans qualify, what short term rental income lenders count
 
----
+**Handoff**
+- Gives a link to book 15 minutes with Eli when a question needs a licensed human
 
-## 4. What Marina can do now (capability bullets)
+## 4. For Realtor partners
 
-**Available 24/7** — Instant answers any time, no waiting and no hard sales gate.
+> Realtor partners get a personal Marina link. Buyers who open it see your name and brokerage,
+> Marina greets them on your behalf, and any Property Intelligence Brief she writes for them is
+> prepared for you. She never refers your buyer to another agent. Marina Pro, a fully custom
+> version with your face, your voice, and your listings, is coming. Join the waitlist at
+> themortgagedock.com/realtor-partners/.
 
-**Bilingual** — Fluent in English and Spanish, switching naturally to match you.
+## 5. Disclaimer (use near any CTA)
 
-**Coastal-Florida expertise** — Flood zones, wind mitigation, 4-point inspections, roof age,
-impact windows, insurance cost drivers, seawalls, docks, boat lifts, canal-front upkeep, and
-homestead vs. second-home tax treatment.
-
-**Condo & HOA guidance** — Warrantable vs. non-warrantable, questionnaires, reserves,
-litigation, assessments, and condo-approval friction.
-
-**Full loan knowledge** — Conventional, FHA, VA, Jumbo, DSCR, Bank Statement, ITIN, HELOC,
-rate-term and cash-out refinance, and reverse mortgage basics.
-
-**Scenario-aware guidance** — Tailored help for first-time buyers, coastal/canal buyers,
-investors, homeowners, 62+ reverse inquiries, divorce scenarios, and Realtor partners.
-
-**Smart, progressive intake** — Asks only what's needed and summarizes your situation so you
-never repeat yourself.
-
-**Books the next step** — Schedules a strategy call or hands you off to Eli when readiness is
-clear.
-
----
-
-## 5. Clarity tools Marina can route you to
-
-- **Coastal Risk Clarity Report** — flood, wind, insurance, and true cost of ownership
-- **Condo Approval Risk Scan** — warrantable vs. non-warrantable and HOA red flags
-- **Investor Cash Flow Reality Check** — DSCR fit, rent coverage, and deal speed
-- **Equity Access Preview** — reverse mortgage clarity for owners 62+
-- **Coastal Equity Strategy Report** — divorce and equity-restructuring scenarios
-- **First-Time Coastal Buyer Readiness Path** — from overwhelmed to pre-approval-ready
-- **Self-Employed / Bank Statement QuickCheck** — income options beyond W-2 tax returns
-- **ITIN Pathway Overview** — homeownership routes for ITIN borrowers
+> Marina Vale is an AI assistant providing general education only. She is not a licensed
+> mortgage loan originator. Nothing she says is a commitment to lend, an offer of credit, or a
+> quote of rates, terms, or approval. Flood insurance figures are planning budgets, not quotes.
+> Eli Sanderlin, NMLS #1983384. Coast2Coast Mortgage, LLC, NMLS #376205. Equal Housing Lender.
 
 ---
 
-## 6. Who Marina helps
+## Do NOT claim (not live as of 2026-10-12)
 
-First-time buyers · coastal & canal-front buyers · investors and DSCR/portfolio buyers ·
-homeowners exploring refinance, HELOC, and equity · owners 62+ considering a reverse mortgage ·
-divorce and equity-buyout scenarios · Realtors and referral partners.
-
----
-
-## 7. Trust / disclaimer line (use near any CTA)
-
-> Marina is your guide, not the final word. She never guarantees rates, approvals, insurance
-> premiums, or timelines — she gives you clarity, then connects you with Eli O. Sanderlin for
-> personalized strategy and execution.
+| Claim | Reality |
+|---|---|
+| Spanish / bilingual | English only. No Spanish in the prompt or voice settings. |
+| SMS, Facebook, Instagram | Website chat only. The GHL Conversation AI bot is switched off. |
+| Rent estimates | Not wired. Only RentCast property and value endpoints are called. |
+| Coastal Risk Score inside Marina | Mentioned in her prompt, no code behind it. |
+| Books appointments | Gives a static `/strategy` booking link, no calendar integration. |
+| "Texts Eli a summary" | No SMS code exists, even though her script offers it. |
+| Remembers you next visit | Chat page memory is per browser tab. |
+| "8 clarity tools" (Coastal Risk Clarity Report, Condo Approval Scan, etc.) | Not part of Marina. These came from planning docs, not the live product. |
