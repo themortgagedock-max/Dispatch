@@ -15,7 +15,7 @@ from openpyxl.utils import get_column_letter
 from openpyxl.worksheet.datavalidation import DataValidation
 
 from workbook_data import (
-    AS_OF, BUYER, CANDIDATE_SHEETS, CHECKLIST, COUNTY_TAX, MARKETS, RULES, SOURCES,
+    AS_OF, BUYER, CANDIDATE_SHEETS, CHECKLIST, COUNTY_TAX, MARKETS, RULES, SOURCES, SUMMARY, SUMMARY_NOTES,
 )
 
 OUT = Path(__file__).with_name("STR_DSCR_Analysis.xlsx")
@@ -385,6 +385,45 @@ def build_scenarios(wb, R, picks):
     ws.freeze_panes = "B5"
 
 
+def build_summary(wb, firsts):
+    ws = wb.create_sheet("Summary", 0)
+    ws["A1"] = "STR DSCR Search: Summary of Top Picks"
+    ws["A1"].font = TITLE
+    ws["A2"] = (f"As of {AS_OF}. Every number below is a live link (green) to the market tabs; change inputs there or on "
+                "Assumptions.")
+    ws["A2"].font = SUB
+    heads = ["Market Tab", "Address", "City / ZIP", "Offer Price", "Stated Gross ($/yr)", "PITIA ($/mo)",
+             "DSCR (gross)", "DSCR (lender haircut)", "Cash to Close", "Cash Flow Self-Managed ($/yr)",
+             "Cash Flow Full PM ($/yr)", "Verdict"]
+    widths = [18, 32, 20, 12, 13, 11, 9, 10, 12, 13, 12, 60]
+    src = ["Address", "City / ZIP", "Offer Price", "Stated Gross Income ($/yr)", "PITIA ($/mo)", "DSCR (gross)",
+           "DSCR (lender haircut)", "Cash to Close", "Cash Flow Self-Managed ($/yr)", "Cash Flow Full PM ($/yr)"]
+    for i, (h, w) in enumerate(zip(heads, widths), start=1):
+        col = get_column_letter(i)
+        ws.column_dimensions[col].width = w
+        _cell(ws, f"{col}4", h, HDR_FONT, fill=HDR_FILL, align=CENTER)
+    ws.row_dimensions[4].height = 32
+    for k, (sheet, idx, verdict) in enumerate(SUMMARY):
+        r = 5 + k
+        q = f"'{sheet}'!" if (" " in sheet or "-" in sheet) else f"{sheet}!"
+        row = firsts[sheet] + idx
+        _cell(ws, f"A{r}", sheet)
+        for j, h in enumerate(src, start=2):
+            _cell(ws, f"{get_column_letter(j)}{r}", f"={q}${COL[h]}${row}", GREEN, FMT.get(h), align=WRAP)
+        _cell(ws, f"L{r}", verdict, BLACK, align=WRAP, fill=YELLOW if k == 0 else None)
+    r = 5 + len(SUMMARY) + 1
+    ws[f"A{r}"] = "Key takeaways"
+    ws[f"A{r}"].font = BOLD
+    for note in SUMMARY_NOTES:
+        r += 1
+        ws[f"A{r}"] = "- " + note
+        ws[f"A{r}"].font = BLACK
+        ws.merge_cells(f"A{r}:L{r}")
+        ws[f"A{r}"].alignment = WRAP
+        ws.row_dimensions[r].height = 28
+    ws.freeze_panes = "B5"
+
+
 def build_table_sheet(wb, name, title, subtitle, headers, widths, rows, link_col=None):
     ws = wb.create_sheet(name)
     ws["A1"] = title
@@ -415,9 +454,10 @@ def build_table_sheet(wb, name, title, subtitle, headers, widths, rows, link_col
 def main():
     wb = Workbook()
     R = build_assumptions(wb)
-    picks = []
+    picks, firsts = [], {}
     for spec in CANDIDATE_SHEETS:
         first, _ = build_candidates(wb, R, spec)
+        firsts[spec["sheet"]] = first
         for idx in spec.get("scenario_rows", []):
             picks.append((spec["sheet"], first + idx))
     build_scenarios(wb, R, picks)
@@ -432,8 +472,10 @@ def main():
                       ["#", "Item", "Why it matters"], [5, 60, 70], CHECKLIST)
     build_table_sheet(wb, "Sources", "Sources and Notes", f"Research compiled {AS_OF}.",
                       ["Topic", "Source / Note", "URL"], [28, 80, 60], SOURCES, link_col=2)
+    build_summary(wb, firsts)
     for ws in wb.worksheets:
         ws.sheet_view.showGridLines = False
+    wb.active = 0
     wb.save(OUT)
     print(f"wrote {OUT}")
 

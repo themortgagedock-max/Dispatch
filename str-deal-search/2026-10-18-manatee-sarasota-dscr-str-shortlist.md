@@ -220,3 +220,72 @@ Model: `str-deal-search/dscr_model.py` (all assumptions at the top; run with `py
 2. Call on #1 and #2 today with the request list above. Book showings.
 3. Write #1 at about $560k with a 3% seller credit, a 10-day inspection, and appraisal + financing contingencies. Use #2 as the backup offer.
 4. Email the agents on the no-numbers STRs above for T12 payouts.
+
+---
+
+## 8. Pinellas County (added)
+
+The same method was used: 8 Zillow keyword sweeps, about 420 unique listings, plus jurisdiction rules. Full math is on the `Pinellas` tab of `STR_DSCR_Analysis.xlsx`.
+
+### Where nightly single-family STRs are legal
+- Unincorporated county, with a $450/yr Certificate of Use, a $150 inspection and a 10-guest maximum
+- Largo
+- Indian Rocks Beach ($300 registration + $150 inspection; enforcement stepped up in 2026)
+- Redington Beach (strict: 8 guests maximum)
+- Indian Shores (likely; verify)
+
+### Where stays effectively must be 30 days or more
+- City of St. Pete
+- St. Pete Beach
+- Clearwater residential
+- Gulfport and Dunedin
+- Treasure Island RU-75
+- Madeira R-1/R-2 (3–6 month minimums)
+- Redington Shores (181 days)
+- North Redington and Belleair Beach (90 days)
+
+**Mailing city is not the jurisdiction.** Verify every parcel.
+
+### Best Pinellas houses (25% down)
+
+| Property | Price | Stated income | DSCR gross / at haircut | Cash to close | Note |
+|---|---|---|---|---|---|
+| 12565 81st Ave, Seminole | offer $485k | ~$71k | 1.53 / 1.22 | $141k | Airbnb since 2022 with a city license; the $71k is "estimated," so get the T12 |
+| 4000 46th St N, St Pete 33714 | offer $485k | $85k first-year pace | 1.83 / 1.46 | $141k | Less than 12 months of history; city vs. unincorporated Lealman unconfirmed |
+| 341 Wertz Dr, Largo | offer $340k | $51k (pre-hurricane T12) | 1.44 / 1.16 | $99k | Paused since the 2024 storms |
+
+- **Beach condos (Madeira, Indian Rocks, Redington Shores):** the income is real ($50–75k), but $630–1,325/mo HOAs plus AE/VE flood insurance push DSCR to 0.5–1.0. Pass.
+- **Market context:** the county has 3.5 months of supply, so it leans toward sellers. The barrier islands are a buyer's market (Madeira has 7–9 months of supply).
+- **Helene and Milton:** damaged about 41k Pinellas homes. Enforce FEMA 50%-rule diligence on anything at ground level.
+
+## 9. Other West-Coast Florida markets (added)
+
+See the `Other SWFL Markets` and `Other SWFL Listings` tabs.
+
+### Markets worth targeting, in order
+1. **Cape Coral Gulf-access canal pool homes (33904, 33914, southern 33991).**
+   - DSCR on typical income is about 0.9–1.17.
+   - Rules: $350/yr city registration and no minimum stay.
+   - Momentum: Lee bed tax is up 11.8% YoY and months of supply fell from 7.0 to 4.8.
+   - Risks: STR supply is up about 19%, ADR is softening, and North Cape utility assessments run about $3.4k/yr.
+2. **Charlotte Harbor canals (Punta Gorda Isles / Burnt Store / South Gulf Cove).**
+   - Momentum: the strongest bed-tax growth in the region (+17.6%), and county home values are down 8.2%, so buyers have leverage.
+   - Risk: Punta Gorda STR listings are up 82%.
+3. **Unincorporated East Naples / Golden Gate.**
+   - Highest ADRs, and only county registration applies.
+   - Risks: 6–10 miles to the beach, and HOAs are common.
+
+### Avoid
+- Pasco
+- Citrus
+- Hernando
+- Apollo Beach
+- City of Naples (30-day minimum)
+- Sanibel (28-day minimum)
+- Marco Island and Boca Grande (price)
+- Fort Myers Beach for now: about 22 months of inventory, revenue falling, VE zones
+
+### Listings
+The only Lee/Charlotte/Collier listing with documented income that clears DSCR after the haircut is **326 NW 21st Ter, Cape Coral** ($475k, "over $60k"; 1.33 gross / 1.07 at haircut). It is inland. Nine Gulf-access Cape and Charlotte Harbor STRs that offer history on request are on the watch list.
+
+**Data note:** the Apify scraper account hit its monthly usage cap during this pass, so two Lee/Charlotte/Collier sweeps and part of the Pinellas seasonal sweep didn't run.
