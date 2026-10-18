@@ -19,6 +19,33 @@ Assumptions: DSCR STR at 80% LTV, about 7.875% (most lenders need 720+ FICO for 
 
 **Two things to confirm first: her FICO, and whether she has non-cash assets (retirement or brokerage) that can count toward reserves.**
 
+### Update: buyer profile confirmed
+She has an **800 FICO, about $550k in a brokerage account, and about $60k in checking**. The loan application is in.
+
+**Reserves are no longer a constraint.** The brokerage covers 6–12 months of PITIA several times over. Her FICO is in the top pricing tier, so 80% LTV on an STR is available. **The decision is no longer what she can afford; it's how much to put down.**
+
+Rates below are placeholders. Overwrite them with your live rate sheet: 80% LTV at 7.50%, 75% at 7.25%, 70% at 7.125%.
+
+| #1: 8404 43rd Ave Ter W at $560k + 3% credit | 20% down | **25% down** | 30% down |
+|---|---|---|---|
+| Cash in (down + closing − credit) | $117.6k | **$145.6k** | $173.6k |
+| PITIA | $4,499 | **$4,232** | $4,008 |
+| DSCR on gross / at 80% haircut | 1.57 / 1.26 | **1.67 / 1.34** | 1.77 / 1.41 |
+| Cash flow, self-managed (conservative) | −$6.0k | **−$2.8k** | −$0.1k |
+| Cash flow, full-service management | −$23.0k | −$19.8k | −$17.1k |
+
+**Recommendation: 25% down.** The extra $28k beyond 20% improves cash flow by about $3.2k a year, roughly an 11% return on that money from the lower rate tier and smaller loan. It also fits her original $150k plan.
+
+The cash-flow lines are conservative. They assume 10% platform fees and 10% cleaning on top of the seller's gross. If the seller's "gross" is payouts with cleaning fees included, add about $5–10k a year.
+
+Running the numbers for her bigger balance sheet:
+- **A bigger budget doesn't buy a better yield.** Over-ceiling STRs with documented income have lower gross yields than #1's 15.2%:
+  - 5218 6th Ave Dr W: $825k, $110k trailing 12 months, 13.3%
+  - 607 37th St W: about $725k, $97k trailing 12 months, about 13.4% (unconfirmed)
+- **Use the seller credit for rate buydown points rather than plain closing costs.** At 25% down she doesn't need help with closing.
+- **Down-payment source:** selling stock may trigger capital gains, so have her CPA check before liquidating. One alternative is a securities-based line against the portfolio, if the lender accepts secured borrowed funds as the down-payment source. Either way, keep a clean paper trail: brokerage sale, then a wire or transfer, with statements showing both.
+- **Earnest money** comes from checking: plan on 3–5% to compete with national STR investors.
+
 ---
 
 ## 2. Rules that reshape the map
@@ -189,7 +216,7 @@ Model: `str-deal-search/dscr_model.py` (all assumptions at the top; run with `py
 
 ## 7. Next steps (48 hours)
 
-1. Confirm her FICO and reserve assets, and lock in the program (80% vs 75% LTV, IO option).
+1. Confirm the program at 75% LTV. Get a pre-approval letter written at the offer price, plus a brokerage statement as proof of funds. Have the lender pre-review the seller's T12 payout reports so the STR income is accepted before the inspection period ends.
 2. Call on #1 and #2 today with the request list above. Book showings.
 3. Write #1 at about $560k with a 3% seller credit, a 10-day inspection, and appraisal + financing contingencies. Use #2 as the backup offer.
 4. Email the agents on the no-numbers STRs above for T12 payouts.
