@@ -15,7 +15,8 @@ from openpyxl.utils import get_column_letter
 from openpyxl.worksheet.datavalidation import DataValidation
 
 from workbook_data import (
-    AS_OF, BUYER, CANDIDATE_SHEETS, CHECKLIST, COUNTY_TAX, MARKETS, RULES, SOURCES, SUMMARY, SUMMARY_NOTES,
+    AS_OF, BUYER, CANDIDATE_SHEETS, CHECKLIST, COUNTY_TAX, KEYS_MARKETS, MARKETS, RULES, SOURCES, SUMMARY,
+    SUMMARY_NOTES,
 )
 
 OUT = Path(__file__).with_name("STR_DSCR_Analysis.xlsx")
@@ -479,6 +480,8 @@ def main():
     if MARKETS:
         build_table_sheet(wb, "Other SWFL Markets", MARKETS["title"], MARKETS["subtitle"],
                           MARKETS["headers"], MARKETS["widths"], MARKETS["rows"])
+    build_table_sheet(wb, "Keys Market Guide", KEYS_MARKETS["title"], KEYS_MARKETS["subtitle"],
+                      KEYS_MARKETS["headers"], KEYS_MARKETS["widths"], KEYS_MARKETS["rows"])
     build_table_sheet(wb, "STR Rules", "STR / Minimum-Stay Rules by Jurisdiction",
                       "Verify with the city/county before contract; pre-2011 local bans survive FL preemption (F.S. 509.032(7)).",
                       RULES["headers"], RULES["widths"], RULES["rows"])
