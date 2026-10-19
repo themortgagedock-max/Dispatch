@@ -149,10 +149,10 @@ def build_assumptions(wb):
         _cell(ws, f"{get_column_letter(2 + j)}{r}", h, HDR_FONT, fill=HDR_FILL, align=CENTER)
     _cell(ws, f"I{r}", "Note / source", HDR_FONT, fill=HDR_FILL)
     profiles = [
-        ("STR", 0.20, 0.10, 0.10, 0.08, 0.05,
+        ("STR", 0.20, 0.10, 0.00, 0.08, 0.05,
          "Nightly/weekly. Full-service PM 18-30% locally; Airbnb host-only fee 15.5% (blended 10%); "
-         "cleaning ~10% of gross (offset if guest-paid fees are inside the seller's gross)."),
-        ("Seasonal", 0.12, 0.02, 0.03, 0.06, 0.05,
+         "cleaning = 0: passed through to guests as a cleaning fee. Use gross EXCLUDING guest-paid cleaning fees."),
+        ("Seasonal", 0.12, 0.02, 0.00, 0.06, 0.05,
          "30-day+ furnished (snowbird Jan-Apr, travel nurses, insurance displacement). Fewer turns."),
     ]
     prof_first = r + 1

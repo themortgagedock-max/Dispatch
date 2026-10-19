@@ -17,12 +17,13 @@ TAX_RATE = {"Manatee": 0.0150, "Sarasota": 0.0135}  # non-homestead incl. non-ad
 INS_BASE = 7000        # rental-dwelling HO + wind + $1M STR liability, mainland CBS home
 FLOOD = {"X": 1000, "AE": 4500, "VE": 9000, "?": 2000}
 
-# Operating-expense profiles (real cash flow, NOT used by DSCR lenders)
+# Operating-expense profiles (real cash flow, NOT used by DSCR lenders).
+# Cleaning is 0: it is passed through to guests as a cleaning fee, so gross should exclude guest-paid cleaning fees.
 PROFILES = {
     # nightly/weekly STR, full-service PM
-    "str": {"mgmt": 0.20, "platform": 0.10, "cleaning": 0.10, "maint": 0.08, "capex": 0.05},
+    "str": {"mgmt": 0.20, "platform": 0.10, "cleaning": 0.00, "maint": 0.08, "capex": 0.05},
     # 30-day+ seasonal furnished (snowbird + off-season monthly), seasonal PM
-    "seasonal": {"mgmt": 0.12, "platform": 0.02, "cleaning": 0.03, "maint": 0.06, "capex": 0.05},
+    "seasonal": {"mgmt": 0.12, "platform": 0.02, "cleaning": 0.00, "maint": 0.06, "capex": 0.05},
 }
 UTIL_ANNUAL = 6000     # power, water/sewer/trash, internet, streaming (owner-paid in furnished rentals)
 POOL_LAWN_PEST = 3000  # with pool; 1200 without
