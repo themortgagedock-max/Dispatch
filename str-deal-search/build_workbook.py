@@ -197,7 +197,8 @@ CAND_COLS = [
     ("Type", 11, "txt"), ("Bd/Ba/SqFt/Yr", 15, "txt"), ("List Price", 12, "in"),
     ("Offer Price", 12, "in"), ("Seller Credit %", 9, "in"), ("Down Pmt %", 8, "in"),
     ("Stated Gross Income ($/yr)", 13, "in"), ("Income Basis (seller-stated)", 34, "txt"),
-    ("Flood Zone", 9, "in"), ("Pool", 6, "in"), ("HOA ($/mo)", 9, "in"), ("Profile", 9, "in"),
+    ("Flood Zone", 9, "in"), ("Pool", 6, "in"), ("HOA ($/mo)", 9, "in"),
+    ("Ins Override ($/yr)", 10, "in"), ("Profile", 9, "in"),
     # calcs
     ("Loan Amount", 12, "calc"), ("Rate", 8, "calc"), ("P&I ($/mo)", 10, "calc"),
     ("Taxes ($/mo)", 10, "calc"), ("Ins + Flood ($/mo)", 10, "calc"), ("PITIA ($/mo)", 11, "calc"),
@@ -221,7 +222,8 @@ def cand_formulas(row, R):
         "Rate": f"=IF({ltv}>0.75,{R['rate80']},IF({ltv}>0.7,{R['rate75']},{R['rate70']}))",
         "P&I ($/mo)": f"=PMT({c['Rate']}/12,{R['term']},-{c['Loan Amount']})",
         "Taxes ($/mo)": f"={c['Offer Price']}*INDEX({R['county_tax']},MATCH({c['County']},{R['counties']},0))/12",
-        "Ins + Flood ($/mo)": (f"=(INDEX({R['county_ins']},MATCH({c['County']},{R['counties']},0))"
+        "Ins + Flood ($/mo)": (f"=IF(ISNUMBER({c['Ins Override ($/yr)']}),{c['Ins Override ($/yr)']},"
+                               f"INDEX({R['county_ins']},MATCH({c['County']},{R['counties']},0))"
                                f"+INDEX({R['zone_cost']},MATCH({c['Flood Zone']},{R['zones']},0)))/12"),
         "PITIA ($/mo)": f"={c['P&I ($/mo)']}+{c['Taxes ($/mo)']}+{c['Ins + Flood ($/mo)']}+{c['HOA ($/mo)']}",
         "DSCR (gross)": f"=IFERROR({c['Stated Gross Income ($/yr)']}/12/{c['PITIA ($/mo)']},0)",
@@ -241,7 +243,7 @@ def cand_formulas(row, R):
 
 FMT = {
     "List Price": USD, "Offer Price": USD, "Seller Credit %": PCT, "Down Pmt %": PCT,
-    "Stated Gross Income ($/yr)": USD, "HOA ($/mo)": USD, "Loan Amount": USD, "Rate": PCT3,
+    "Stated Gross Income ($/yr)": USD, "HOA ($/mo)": USD, "Ins Override ($/yr)": USD, "Loan Amount": USD, "Rate": PCT3,
     "P&I ($/mo)": USD, "Taxes ($/mo)": USD, "Ins + Flood ($/mo)": USD, "PITIA ($/mo)": USD,
     "DSCR (gross)": DSCR, "DSCR (lender haircut)": DSCR, "Cash to Close": USD, "Reserves (6 mo)": USD,
     "Opex excl. Mgmt ($/yr)": USD, "Mgmt ($/yr)": USD, "Cash Flow Self-Managed ($/yr)": USD,
@@ -255,7 +257,8 @@ def build_candidates(wb, R, spec):
     ws["A1"].font = TITLE
     ws["A2"] = spec["subtitle"]
     ws["A2"].font = SUB
-    ws["A3"] = ("Edit blue cells (Offer Price, Seller Credit %, Down Pmt %, Income, Flood Zone) to rerun. "
+    ws["A3"] = ("Edit blue cells (Offer Price, Seller Credit %, Down Pmt %, Income, Flood Zone, Ins Override) to rerun. "
+                "Ins Override (blank = county base + flood) is for condos with master wind/flood policies. "
                 "Qualify on DSCR (lender haircut) >= 1.00; >= 1.15 preferred. Income is seller-stated until "
                 "verified with platform payout reports.")
     ws["A3"].font = SUB
@@ -277,7 +280,8 @@ def build_candidates(wb, R, spec):
             "Seller Credit %": rec.get("credit", 0), "Down Pmt %": rec.get("down", f"={R['down']}"),
             "Stated Gross Income ($/yr)": rec["gross"], "Income Basis (seller-stated)": rec["basis"],
             "Flood Zone": rec.get("flood", "Unknown"), "Pool": rec.get("pool", "N"),
-            "HOA ($/mo)": rec.get("hoa", 0), "Profile": rec.get("profile", "STR"),
+            "HOA ($/mo)": rec.get("hoa", 0), "Ins Override ($/yr)": rec.get("ins"),
+            "Profile": rec.get("profile", "STR"),
             "Last Sale": rec.get("last_sale", ""), "DOM": rec.get("dom"),
             "Key Risks / Notes": rec.get("notes", ""), "Listing Link": None,
         }
@@ -323,17 +327,18 @@ def build_candidates(wb, R, spec):
         ws[f"A{r}"].font = BOLD
         r += 1
         heads = ["Address", "City / ZIP", "Price", "Evidence (no $ in listing)", "Ask agent for", "Link"]
-        cols = ["B", "C", "G", "L", "AI", "AJ"]
+        cols = [COL["Address"], COL["City / ZIP"], COL["List Price"], COL["Income Basis (seller-stated)"],
+                COL["Key Risks / Notes"], COL["Listing Link"]]
         for h, col in zip(heads, cols):
             _cell(ws, f"{col}{r}", h, HDR_FONT, fill=HDR_FILL, align=CENTER)
         for w in spec["watchlist"]:
             r += 1
-            _cell(ws, f"B{r}", w["address"], BLUE, align=WRAP)
-            _cell(ws, f"C{r}", w["city"], BLUE, align=WRAP)
-            _cell(ws, f"G{r}", w["price"], BLUE, USD)
-            _cell(ws, f"L{r}", w["evidence"], BLUE, align=WRAP)
-            _cell(ws, f"AI{r}", w.get("ask", "T12 payout reports + TDT filings"), BLUE, align=WRAP)
-            c = _cell(ws, f"AJ{r}", "Zillow", BLUE)
+            _cell(ws, f"{cols[0]}{r}", w["address"], BLUE, align=WRAP)
+            _cell(ws, f"{cols[1]}{r}", w["city"], BLUE, align=WRAP)
+            _cell(ws, f"{cols[2]}{r}", w["price"], BLUE, USD)
+            _cell(ws, f"{cols[3]}{r}", w["evidence"], BLUE, align=WRAP)
+            _cell(ws, f"{cols[4]}{r}", w.get("ask", "T12 payout reports + TDT filings"), BLUE, align=WRAP)
+            c = _cell(ws, f"{cols[5]}{r}", w.get("link_label", "Zillow"), BLUE)
             c.hyperlink = w["url"]
             c.font = Font(name=FONT, size=10, color="0563C1", underline="single")
     ws.freeze_panes = ws[f"C{first}"]
@@ -374,7 +379,8 @@ def build_scenarios(wb, R, picks):
             _cell(ws, f"G{r}", f"=IF({ltv}>0.75,{R['rate80']},IF({ltv}>0.7,{R['rate75']},{R['rate70']}))", BLACK, PCT3)
             _cell(ws, f"H{r}", f"=PMT(G{r}/12,{R['term']},-F{r})", BLACK, USD)
             pitia = (f"=H{r}+C{r}*INDEX({R['county_tax']},MATCH({s['County']},{R['counties']},0))/12"
-                     f"+(INDEX({R['county_ins']},MATCH({s['County']},{R['counties']},0))"
+                     f"+IF(ISNUMBER({s['Ins Override ($/yr)']}),{s['Ins Override ($/yr)']},"
+                     f"INDEX({R['county_ins']},MATCH({s['County']},{R['counties']},0))"
                      f"+INDEX({R['zone_cost']},MATCH({s['Flood Zone']},{R['zones']},0)))/12+{s['HOA ($/mo)']}")
             _cell(ws, f"I{r}", pitia, BLACK, USD)
             _cell(ws, f"J{r}", f"=IFERROR(E{r}/12/I{r},0)", BLACK, DSCR)
