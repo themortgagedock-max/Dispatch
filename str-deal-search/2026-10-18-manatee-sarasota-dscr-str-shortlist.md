@@ -340,3 +340,62 @@ The Keys don't beat Manatee for this buyer:
 **If she wants the Keys anyway:**
 - Pursue **Kawama E5** (cleanest claim) or **Ocean Pointe #2212**, only after seeing statements.
 - Or wait for a licensed **Marathon or Key Colony Beach 3–4BR canal pool home** (reported $140–180k gross). These mostly trade above $950k.
+
+## 11. PropertyRadar results (added 2026-10-19)
+
+The full list is on the `PropertyRadar` tab of `STR_DSCR_Analysis.xlsx`. Every row uses live formulas tied to the Assumptions tab.
+
+### What was pulled
+- **Spend:** 193 records = **193 credits** of the 250-credit cap, leaving 57 in reserve.
+  - 1 record costs 1 credit. A 1-record test confirmed it: the API's free-record counter fell from 10,000 to 9,999. The API reports `totalCost` as $0 because purchases draw on the account allowance.
+  - Counts and previews (`Purchase=0`) are free.
+  - No owner contact data, phone or email add-ons were bought, and no skip tracing was done.
+- **Filters on every tier:**
+  - Active MLS listing, list price $375k–$650k, single-family, 3+ bedrooms.
+  - Pinellas has no bed counts in its public record, so 1,200+ sf was used there instead.
+  - Absentee owner: the mailing address differs from the property and there's no homestead exemption.
+  - Owned 18+ months: no recorded transfer in the last 548 days.
+  - The 2 mobile homes that came through were flagged and excluded.
+
+| Tier | Absentee listings (count) | Bought | Where |
+|---|---|---|---|
+| T1 Manatee + Sarasota | 240 countywide (99 + 141) | **108** | Manatee beach ZIPs (13) + 34203/34221/34243 (24). Sarasota beach ZIP list (49) + 34232/34235/34237 (22). |
+| T2 Pinellas | 187 countywide | **57** | Seminole/Palm Harbor/Lealman focus ZIPs (36) + Largo/mid-county (21) |
+| T3 Lee / Charlotte | 343 countywide | **28** | Cape Coral 33904/33914 with pool, ≤ $550k (24) + Fort Myers Beach/Englewood (4) |
+| Monroe | 26 listed, 9 absentee | 0 | Counts only, as instructed |
+
+### The screen
+PropertyRadar has no rental income, so each house gets a required-rent test.
+- **Required gross** = PITIA × 12 × target DSCR ÷ 0.80 (the lender haircut).
+- PITIA uses list price, 25% down (7.25%), county tax, $7k insurance and flood by zone.
+- Required gross is compared with an editable **benchmark gross** for each market. The benchmarks are anchored to the seller-stated incomes already in this workbook.
+
+**Result:** 1 PASS, 25 MARGINAL (clears 1.00 but not 1.25), 165 FAIL, 2 excluded.
+- Three houses that came back were already in the workbook: 2801 23rd Ave W, 3409 18th Ave Dr W and 8403 13th Ave NW.
+- **Takeaway:** an absentee-owned listing with no rental history needs about $50–65k of gross just to reach DSCR 1.00 at list price. That is market-average STR income at best.
+
+### Top finds vs. #1 (8404 43rd Ave Ter W: $560k offer, $85k stated, DSCR 1.31 after haircut, $145.6k cash)
+
+| Property | List | Gross needed for DSCR 1.00 / 1.25 | Cash to close | What the web search found |
+|---|---|---|---|---|
+| 216 SW 29th St, Cape Coral 33914 | $424,900 | $51.6k / $64.5k | $123k | 4/2, built 2016, saltwater pool, zone X, no HOA. Only PASS. No rental history; dry lot. |
+| 930 SW 37th Ter, Cape Coral 33914 | $400,000 | $49.2k / $61.5k | $116k | **Only house with STR evidence:** 2024 remarks said "successful vacation rental," and it's on the FL DBPR vacation-rental license list. No $ figures. ~400 DOM. On the SWFL watch list. |
+| 209 15th St, Palm Harbor 34683 | $499,000 | $58.3k / $72.8k | $145k | 3/2 pool. Unincorporated, so nightly STR is legal with a Certificate of Use. Cut from $555k. No history. |
+| 634 SE 32nd St, Cape Coral 33904 | $429,900 | $52.1k / $65.2k | $125k | Long-term rental at $2,700/mo now. Metal roof, outside flood zone. |
+| 8665 Mockingbird Ln, Seminole 33777 | ~$425–430k | $51.1k / $63.9k | $123k | Fixer, ~830 DOM. Likely unincorporated. Homestead taxes will reset. |
+
+**Verdict: nothing in the PropertyRadar pull beats 8404 43rd Ave Ter W.**
+- **No stated income anywhere.** None of the 15 listings that were web-searched gives a rental income figure, so none qualifies as a full county-tab candidate.
+- **Existing income is long-term.** The houses that do have rental history (634 SE 32nd, 1115 SE 30th, 10293 Satsuma, 1039 Madison) rent to annual tenants at $2,700–2,950/mo, about $33–35k/yr. That doesn't come close to the required STR gross.
+
+**One worth a call:** 930 SW 37th Ter.
+- It's a licensed vacation rental priced at $400k, sitting ~400 days.
+- Ask for 12–24 months of payouts. At about $61k+ gross it clears 1.25.
+- It's a cheaper backup to #2, not a replacement for #1.
+
+### Caveats
+- PropertyRadar's pool, flood and bed data come from the assessor. The web check corrected several:
+  - 3010 Hatton: likely no pool.
+  - 1039 Madison: 2BR.
+  - 6513 29th Ave W: no pool mentioned.
+- Listing pages were blocked, so the web findings come from search snippets only. Confirm jurisdiction on the county appraiser, especially 2225 Jaffa Pl (Clearwater city limits mean a 30-day minimum).

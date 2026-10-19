@@ -27,7 +27,8 @@ PR_ROWS = [
   "pool": "Y",
   "flood": "X",
   "tier": "T3 Cape Coral pool",
-  "notes": ""
+  "notes": "WEB: 4/2 2016 heated saltwater pool, corner lot, zone X, no HOA. Cut from $450k; on/off market since 2025 ($479.9k). No canal or rental claims seen: dry lot likely. Best screen in the pull, but no income history.",
+  "highlight": True
  },
  {
   "radar_id": "P7BC992B",
@@ -51,7 +52,7 @@ PR_ROWS = [
   "pool": "Y",
   "flood": "X",
   "tier": "T3 Cape Coral pool",
-  "notes": ""
+  "notes": "WEB: currently/recently a long-term rental ($2,700/mo; $3,200 in 2023); same MLS also shows for rent. Metal roof, outside flood zone. No canal, no STR history."
  },
  {
   "radar_id": "P7F9C9E4",
@@ -72,10 +73,10 @@ PR_ROWS = [
   "equity_pct": 100,
   "owner": "Trust",
   "absentee": "N",
-  "pool": "Y",
+  "pool": "N",
   "flood": "X",
   "tier": "T1 Sarasota city",
-  "notes": ""
+  "notes": "WEB: Opendoor resale; remarks say 'room for a pool', so likely NO pool (PropertyRadar shows pool; set to N). Nearby parcels show City Limits (7-night min). No rental claims."
  },
  {
   "radar_id": "P7E7B09F",
@@ -99,7 +100,8 @@ PR_ROWS = [
   "pool": "Y",
   "flood": "X",
   "tier": "T2 Pinellas focus",
-  "notes": "Beds not in Pinellas public record; screen assumes 3BR <2,000 sf, 4BR >=2,000 sf."
+  "notes": "Beds not in Pinellas public record; screen assumes 3BR <2,000 sf, 4BR >=2,000 sf. WEB: 3/2 pool, unincorporated Palm Harbor (nightly STR legal w/ Certificate of Use). Cut $555k -> $499k since July. No rental history. Cleanest STR-legal Pinellas pool house in the pull.",
+  "highlight": True
  },
  {
   "radar_id": "P7E9E7AF",
@@ -123,7 +125,7 @@ PR_ROWS = [
   "pool": "Y",
   "flood": "X",
   "tier": "T2 Pinellas focus",
-  "notes": "Beds not in Pinellas public record; screen assumes 3BR <2,000 sf, 4BR >=2,000 sf."
+  "notes": "Beds not in Pinellas public record; screen assumes 3BR <2,000 sf, 4BR >=2,000 sf. WEB: 3/2 fixer, sold as-is, ~830 DOM (same MLS since 2024), last seen $429.9k. Homestead taxes $1.2k will reset. Likely unincorporated (Bardmoor)."
  },
  {
   "radar_id": "P7C89730",
@@ -147,7 +149,7 @@ PR_ROWS = [
   "pool": "Y",
   "flood": "X",
   "tier": "T1 Manatee beach",
-  "notes": ""
+  "notes": "WEB: REO/foreclosure resale (Feb 2026 auction). Zoning R1B suggests City of Bradenton (certificate required). One site shows a cut to $374.9k. No rental history."
  },
  {
   "radar_id": "P7E73CA5",
@@ -171,7 +173,7 @@ PR_ROWS = [
   "pool": "Y",
   "flood": "X",
   "tier": "T2 Pinellas Largo/mid",
-  "notes": "Beds not in Pinellas public record; screen assumes 3BR <2,000 sf, 4BR >=2,000 sf."
+  "notes": "Beds not in Pinellas public record; screen assumes 3BR <2,000 sf, 4BR >=2,000 sf. WEB: 3/2, cut $494.7k -> $450k; pool unconfirmed. Jurisdiction (uninc vs City of Largo) unconfirmed; STR legal either way."
  },
  {
   "radar_id": "P7C382E1",
@@ -195,7 +197,7 @@ PR_ROWS = [
   "pool": "Y",
   "flood": "X",
   "tier": "T3 Cape Coral pool",
-  "notes": ""
+  "notes": "WEB: renovated, triple lot, city assessments paid, zone X; tenant-occupied long-term rental (sale subject to lease). Bought 3/2024 for $389k. No canal."
  },
  {
   "radar_id": "P7BD3438",
@@ -219,7 +221,8 @@ PR_ROWS = [
   "pool": "Y",
   "flood": "X",
   "tier": "T3 Cape Coral pool",
-  "notes": ""
+  "notes": "WEB: 2024 remarks said 'successful vacation rental'; address is on the FL DBPR vacation-rental license list. No $ figures. Sold 10/2024 $390k; ~400 DOM at $400k. Ask for payouts. Added to SWFL watch list.",
+  "highlight": True
  },
  {
   "radar_id": "P7E8B042",
@@ -243,7 +246,7 @@ PR_ROWS = [
   "pool": "Y",
   "flood": "X",
   "tier": "T2 Pinellas Largo/mid",
-  "notes": "Beds not in Pinellas public record; screen assumes 3BR <2,000 sf, 4BR >=2,000 sf."
+  "notes": "Beds not in Pinellas public record; screen assumes 3BR <2,000 sf, 4BR >=2,000 sf. WEB: 3/2 pool, HOA ~$60, Grovewood. If inside Clearwater city limits, 30-day minimum kills nightly STR: check PCPAO tax district."
  },
  {
   "radar_id": "P7EB5D48",
@@ -291,7 +294,7 @@ PR_ROWS = [
   "pool": "Y",
   "flood": "X",
   "tier": "T2 Pinellas focus",
-  "notes": "Beds not in Pinellas public record; screen assumes 3BR <2,000 sf, 4BR >=2,000 sf."
+  "notes": "Beds not in Pinellas public record; screen assumes 3BR <2,000 sf, 4BR >=2,000 sf. WEB: 3/2 pool, former long-term rental at $2,750/mo (LLC owner). City of Seminole vs unincorporated unconfirmed."
  },
  {
   "radar_id": "P7E8FFC0",
@@ -339,7 +342,7 @@ PR_ROWS = [
   "pool": "Y",
   "flood": "X",
   "tier": "T2 Pinellas Largo/mid",
-  "notes": "Beds not in Pinellas public record; screen assumes 3BR <2,000 sf, 4BR >=2,000 sf."
+  "notes": "Beds not in Pinellas public record; screen assumes 3BR <2,000 sf, 4BR >=2,000 sf. WEB: actually 2/2 (not 3BR), pool + tiki hut; advertised as a long-term rental at $2,950/mo. 2BR fails the 3+ bed brief."
  },
  {
   "radar_id": "P7EB961A",
@@ -363,7 +366,7 @@ PR_ROWS = [
   "pool": "Y",
   "flood": "X",
   "tier": "T2 Pinellas focus",
-  "notes": "Beds not in Pinellas public record; screen assumes 3BR <2,000 sf, 4BR >=2,000 sf."
+  "notes": "Beds not in Pinellas public record; screen assumes 3BR <2,000 sf, 4BR >=2,000 sf. WEB: 3/2.5, 2,624 sf; cut $649.9k -> $574.9k; institutional SFR owner (past LTR). Likely unincorporated (R-3). Pool vs spa unconfirmed."
  },
  {
   "radar_id": "P7BF6480",
@@ -507,7 +510,7 @@ PR_ROWS = [
   "pool": "Y",
   "flood": "X",
   "tier": "T2 Pinellas Largo/mid",
-  "notes": "Beds not in Pinellas public record; screen assumes 3BR <2,000 sf, 4BR >=2,000 sf."
+  "notes": "Beds not in Pinellas public record; screen assumes 3BR <2,000 sf, 4BR >=2,000 sf. WEB: remodeled 4/3 pool, new roof; cut from $575k. Likely City of Largo (STR allowed). No rental history."
  },
  {
   "radar_id": "P7C3EB6B",
@@ -651,7 +654,7 @@ PR_ROWS = [
   "pool": "Y",
   "flood": "X",
   "tier": "T1 Manatee beach",
-  "notes": ""
+  "notes": "WEB: snippets say 3/2 and no pool mentioned; unfurnished; two cuts $549.9k -> $499,999; likely unincorporated Manatee. No rental claims."
  },
  {
   "radar_id": "P7BDCE14",

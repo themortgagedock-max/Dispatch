@@ -342,6 +342,7 @@ CHECKLIST = [
 ]
 
 SOURCES = [
+    ["Listings (PropertyRadar)", "PropertyRadar API v1, 2026-10-19: 193 listed absentee-owned SFRs bought (193 credits); counts free. Property facts only, no owner contact data. See PropertyRadar tab.", "https://www.propertyradar.com"],
     ["Listings", "Zillow (igolaizola/zillow-scraper-ppe + maxcopell detail scraper via Apify): remarks, price + tax history", "https://www.zillow.com"],
     ["Listings", "Redfin listing pages (flood score, status, price history)", "https://www.redfin.com"],
     ["8404 43rd Ave Ter W", "STR newsletter feature (Sep 29, 2026)", "https://www.theoffersheet.com/p/85k-revenue-on-this-584k-bradenton-str"],
@@ -407,6 +408,11 @@ SWFL = {
     ],
     "watchlist_title": "Operating STRs with history on request: Cape Coral Gulf-access + Charlotte Harbor (request T12)",
     "watchlist": [
+        dict(address="930 SW 37th Ter (PropertyRadar find)", city="Cape Coral 33914", price=400000,
+             evidence="2024 remarks: 'successful vacation rental'; on FL DBPR vacation-rental license list; 3/2 heated pool + spa, "
+                      "2008, zone X, ~400 DOM. Not Gulf access. Needs ~$49k gross for DSCR 1.00 at list, 25% down.",
+             ask="T12 payouts + license status; why it didn't sell at $400k",
+             url="https://www.redfin.com/FL/Cape-Coral/930-SW-37th-Ter-33914/home/61896750", link_label="Redfin"),
         dict(address="2712 SW 4th Pl", city="Cape Coral 33914", price=599000,
              evidence="Pool, 2020 build; Feb 1-Mar 31 2027 booking (59 nights) + Nov 2026 booking transfer",
              url=Z + "2712-SW-4th-Place-Cpe-Coral-FL-33914/455169853_zpid/"),
@@ -518,6 +524,7 @@ SUMMARY_NOTES = [
     "Pinellas: nightly SFH STRs are legal mainly in unincorporated county (Certificate of Use), Largo, Indian Rocks Beach, Redington Beach. St. Pete, St. Pete Beach, Clearwater residential, Gulfport, Dunedin = 30-day+.",
     "Other SWFL: Cape Coral Gulf-access canals (33904/33914) are the best alternative market; Charlotte Harbor canals and unincorporated East Naples next. Avoid Pasco, Citrus, Hernando, City of Naples.",
     "Keys: under $950k, documented income is almost all condos in a few STR-legal complexes (Ocean Pointe, Kawama, Hawks Cay). Houses with transferable rental rights are $1M+; county/Islamorada permits don't transfer, Marathon/Key Colony Beach (weekly) are the house plays. Keys insurance and HOAs push PITIA ~40% above the mainland.",
+    "PropertyRadar pull (193 listed absentee-owned homes, 3 counties): nothing beats 8404 43rd Ave Ter W. Best screen is 216 SW 29th St, Cape Coral (needs ~$52k gross for DSCR 1.00 at list) but it has no rental history; the only house with STR evidence is 930 SW 37th Ter, Cape Coral (state vacation-rental license, no $ figures).",
     "All income is seller-stated until verified with 12-24 months of platform payouts + tourist-tax filings.",
 ]
 
