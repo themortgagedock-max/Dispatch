@@ -20,7 +20,7 @@ COUNTY_TAX = [
     ("Lee", 0.0170, "Placeholder: Cape Coral/Fort Myers ~16-19 mills; North Cape utility assessments extra (~$3.4k/yr)."),
     ("Charlotte", 0.0165, "Placeholder."),
     ("Collier", 0.0140, "Placeholder: lowest millage on the coast; ~1.4-1.5% incl. non-ad valorem."),
-    ("Monroe", 0.0110, 14000, "Keys: low millage (~1.0-1.2% of price est.). Base ins. = Keys house wind+HO+STR liability; flood by zone on top. Condos use per-row override."),
+    ("Monroe", 0.0095, 8000, "Keys: ~7.9-9.0 mills (2026) -> 0.70-0.90% of price + $800-1,200/yr non-ad valorem (solid waste, wastewater). Base ins. = wind + non-wind STR policy for an elevated CBS house; flood by zone on top (~$12.5k AE total). Ground-level pre-FIRM: override ~$20k+. Condos: per-row HO-6 override."),
 ]
 
 Z = "https://www.zillow.com/homedetails/"
@@ -369,6 +369,11 @@ SOURCES = [
     ["Keys STR data", "AirDNA Marathon market overview", "https://www.airdna.co/vacation-rental-data/app/us/florida/marathon/overview"],
     ["Keys STR data", "Villa Paraiso: Marathon earnings by property type", "https://paraisovacationrentals.com/how-much-can-an-airbnb-in-marathon-fl-earn/"],
     ["Keys tourism", "Visit Florida Keys partner newsletter (Sep 2026)", "https://visitfloridakeys.com/industry-partners/partner-newsletter/sept-2026"],
+    ["Keys insurance", "OIR county averages (Monroe $7,863 w/ wind, Mar 2026)", "https://www.greeneinsurance.com/guides/florida-home-insurance-by-county"],
+    ["Keys insurance", "Citizens STR eligibility (ATB 006-14)", "https://securesupport.citizensfla.com/app/answers/detail/a_id/1914/~/agent-technical-bulletin-%23006-14:-personal-residential:-short-term-rental"],
+    ["Keys tax", "FL DOR millage comparison 2025", "https://floridarevenue.com/property/Documents/MillCapComp25.pdf"],
+    ["Keys market", "KeysListings market report (Aug 2026)", "https://www.keyslistings.com/blog/florida-keys-real-estate-market-august-2026/"],
+    ["Keys storms", "Monroe County Irma recovery (1,179 destroyed / 2,977 major)", "https://www.monroecounty-fl.gov/612/Hurricane-Irma-Recovery"],
     ["Tourism", "Manatee June 2026 bed tax record $4.61M", "https://www.islander.org/?p=85726"],
 ]
 
@@ -518,7 +523,7 @@ SUMMARY_NOTES = [
 
 
 # ---------------------------------------------------------------- Monroe County (Florida Keys)
-KEYS_CONDO_INS = 3500  # HO-6 + STR liability + loss assessment; master policy carries wind/flood (in HOA dues)
+KEYS_CONDO_INS = 3000  # HO-6 w/ wind + STR endorsement (base $3k, stress $5k); master policy wind/flood is in HOA dues
 
 MONROE = {
     "sheet": "Monroe (Keys)",
@@ -610,6 +615,10 @@ KEYS_MARKETS = {
                 "Notes", "Verdict for this buyer"],
     "widths": [22, 40, 22, 14, 12, 12, 46, 30],
     "rows": [
+        ["KEYS-WIDE 2026 (context)", "Mixed; verify per parcel",
+         "Median SFH ~$1.02M, condo ~$610k (Aug 2026)", "-", "-", "~6,500 STR listings",
+         "Balanced-to-buyer-leaning: prices flat (+/-5%), DOM 100-150, ~6.6 months supply (single source); condos favor buyers. Bed tax FY25 $60.8M (-1%); RevPAR ~+10% YTD 2026",
+         "Insurance ($12k+ house) + HOA ($800-2,000 condo) are the DSCR killers"],
         ["Marathon (city)", "Licensed; 7-night minimum; annual per-unit license", "$56-89k (AirROI/AirDNA/Airbtics)", "$355-534",
          "39-68%", "~830-1,200", "3BR canal $68-84k; 4BR canal + pool + dock $140-180k (manager est.)",
          "BEST Keys fit IF a licensed 3-4BR canal home appears <= ~$900k"],

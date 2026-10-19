@@ -289,3 +289,54 @@ See the `Other SWFL Markets` and `Other SWFL Listings` tabs.
 The only Lee/Charlotte/Collier listing with documented income that clears DSCR after the haircut is **326 NW 21st Ter, Cape Coral** ($475k, "over $60k"; 1.33 gross / 1.07 at haircut). It is inland. Nine Gulf-access Cape and Charlotte Harbor STRs that offer history on request are on the watch list.
 
 **Data note:** the Apify scraper account hit its monthly usage cap during this pass, so two Lee/Charlotte/Collier sweeps and part of the Pinellas seasonal sweep didn't run.
+
+## 10. Monroe County / Florida Keys (added 2026-10-19)
+
+Full detail is in the `Monroe (Keys)` tab and the `Keys Market Guide` tab. This round used web search only: the Zillow scraper is capped and page fetch was blocked. Five agents ran about 200 searches.
+
+### Rules decide everything
+- **Unincorporated Monroe** (Key Largo, Tavernier, Big Pine, Lower Keys, Duck Key, Stock Island):
+  - Stays under 28 days are banned in IS, IS-M and URM zoning, which covers most canal subdivisions.
+  - Elsewhere they need a $1,040/yr permit plus a licensed manager.
+  - The permit does **not** transfer, so the buyer must re-permit.
+- **Islamorada:**
+  - Licenses are capped at 331 and end when the deed transfers.
+  - A 2026 assessed-value floor of $708k–$1.06M applies.
+- **Marathon:** 7-night minimum, **no license cap**, and the license moves with a transfer fee.
+- **Key Colony Beach:** 7-night minimum in R-1/R-2.
+- **Key West:**
+  - Stays under 29–30 days need a capped transient license, worth about $300–500k on its own.
+  - Truman Annex licenses were voided on 12/22/2025.
+- **Manufactured homes** are a large share of inventory under $500k and are not DSCR-eligible.
+
+### Underwriting inputs
+
+| Input | Assumption |
+|---|---|
+| Property tax | About 0.70–0.90% of price + $800–1,200/yr non-ad valorem (about 0.95% all-in) |
+| Insurance, elevated CBS house | About $12–16k/yr (wind + non-wind STR policy + AE flood) |
+| Insurance, ground-level pre-FIRM house | About $20–30k/yr |
+| Condo HO-6 | About $3–5k/yr; master policy wind/flood is in the dues |
+| Condo HOA dues | $800–2,000/mo |
+| Guest taxes | 12.5% |
+
+**Market:** single-family median about $1.02M, condo median about $610k, flat pricing and 100–150 days on market. Buyer-leaning, especially for condos.
+
+### Candidates (25% down, seller-stated income)
+
+| Property | Offer | Stated gross | DSCR gross / at haircut | Cash to close | Note |
+|---|---|---|---|---|---|
+| 500 Burton Dr #2212, Ocean Pointe, Tavernier | $625k | "$100k/yr average" | 1.55 / 1.24 | $181k | Agent-owner claim on an 826 sf 2/2; statements first |
+| 1500 Ocean Bay Dr #E5, Kawama, Key Largo | $760k | $98,980/yr | 1.39 / 1.11 | $220k | Nightly rentals allowed; HOA unconfirmed |
+| 8302 Marina Villas Dr, Hawks Cay, Duck Key | $800k | "$100k+" (2025) | 1.31 / 1.04 | $232k | Resort program, so condotel lender required |
+| Ocean Pointe #3308 / #4211 / #1402 | $535–670k | $38–58k | 0.52–0.68 | — | Owner use plus $1,448 HOA; fail |
+
+### Verdict
+The Keys don't beat Manatee for this buyer:
+- Every Keys candidate is a condo with $1,200–1,450/mo HOA dues.
+- About **$180–230k** of cash is needed at 25% down, which means tapping the brokerage.
+- Condotel and non-warrantable financing narrows the lender pool.
+
+**If she wants the Keys anyway:**
+- Pursue **Kawama E5** (cleanest claim) or **Ocean Pointe #2212**, only after seeing statements.
+- Or wait for a licensed **Marathon or Key Colony Beach 3–4BR canal pool home** (reported $140–180k gross). These mostly trade above $950k.
