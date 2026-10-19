@@ -18,6 +18,7 @@ from workbook_data import (
     AS_OF, BUYER, CANDIDATE_SHEETS, CHECKLIST, COUNTY_TAX, KEYS_MARKETS, MARKETS, RULES, SOURCES, SUMMARY,
     SUMMARY_NOTES,
 )
+from propertyradar_data import PR_BENCH, PR_META, PR_ROWS
 
 OUT = Path(__file__).with_name("STR_DSCR_Analysis.xlsx")
 
@@ -401,6 +402,139 @@ def build_scenarios(wb, R, picks):
     ws.freeze_panes = "B5"
 
 
+PR_COLS = [
+    # (header, width, kind)  kind: in = input (blue), txt = text input, calc = formula, link = Assumptions link (green)
+    ("Address", 26, "txt"), ("City / ZIP", 17, "txt"), ("County", 10, "in"), ("Market (benchmark)", 22, "in"),
+    ("Type", 13, "txt"), ("Beds", 6, "in"), ("Baths", 6, "in"), ("SqFt", 7, "in"), ("Year", 6, "in"),
+    ("List Price", 11, "in"), ("DOM", 6, "in"), ("Last Sale Date", 11, "txt"), ("Last Sale Price", 11, "in"),
+    ("Est. Equity", 11, "in"), ("Owner Type", 13, "txt"), ("Absentee", 8, "in"), ("Pool", 6, "in"),
+    ("Flood Zone", 8, "in"), ("Tier", 15, "txt"),
+    ("Down %", 7, "link"), ("Loan", 11, "calc"), ("Rate", 7, "calc"), ("PITIA ($/mo)", 10, "calc"),
+    ("Req. Gross DSCR 1.00 ($/yr)", 12, "calc"), ("Req. Gross DSCR 1.25 ($/yr)", 12, "calc"),
+    ("Cash to Close", 11, "calc"), ("Beds (screen)", 7, "calc"), ("Benchmark Gross ($/yr)", 11, "calc"),
+    ("Benchmark / Req. 1.00", 9, "calc"), ("DSCR Screen", 10, "calc"), ("Notes", 60, "txt"),
+]
+PR_COL = {h: get_column_letter(i + 1) for i, (h, _, _) in enumerate(PR_COLS)}
+PR_FMT = {"List Price": USD, "Last Sale Price": USD, "Est. Equity": USD, "Down %": PCT, "Loan": USD, "Rate": PCT3,
+          "PITIA ($/mo)": USD, "Req. Gross DSCR 1.00 ($/yr)": USD, "Req. Gross DSCR 1.25 ($/yr)": USD,
+          "Cash to Close": USD, "Benchmark Gross ($/yr)": USD, "Benchmark / Req. 1.00": DSCR, "SqFt": "#,##0",
+          "Year": "0", "DOM": "0", "Beds (screen)": "0"}
+
+
+def build_propertyradar(wb, R):
+    """PropertyRadar pull: required-rent screen at list price. Inputs blue, formulas black, Assumptions links green."""
+    ws = wb.create_sheet("PropertyRadar")
+    ws["A1"] = "PropertyRadar Pull: Listed Absentee-Owned Homes, Required-Rent Screen"
+    ws["A1"].font = TITLE
+    ws["A2"] = (f"As of {PR_META['as_of']}. PropertyRadar has no rental income, so the screen asks: what gross rent does "
+                "this house need to hit DSCR 1.00 / 1.25 after the lender haircut, at list price and the default down "
+                "payment? Required gross = PITIA x 12 x target / haircut. Compare to the market benchmark (blue, editable).")
+    ws["A2"].font = SUB
+    r = 3
+    for label, text in [("Credits", PR_META["credits"]), ("Criteria", PR_META["common"])] + list(PR_META["tiers"]):
+        _cell(ws, f"A{r}", label, BOLD, border=False)
+        ws[f"B{r}"] = text
+        ws[f"B{r}"].font = SUB
+        ws[f"B{r}"].alignment = WRAP
+        ws.merge_cells(f"B{r}:P{r}")
+        ws.row_dimensions[r].height = 26
+        r += 1
+
+    # Screen targets + benchmark table
+    r += 1
+    _cell(ws, f"A{r}", "SCREEN TARGETS", HDR_FONT, fill=HDR_FILL)
+    _cell(ws, f"B{r}", "Value", HDR_FONT, fill=HDR_FILL)
+    t1, t2 = r + 1, r + 2
+    _cell(ws, f"A{t1}", "DSCR target (floor)")
+    _cell(ws, f"B{t1}", 1.00, BLUE, DSCR, fill=YELLOW)
+    _cell(ws, f"A{t2}", "DSCR target (preferred)")
+    _cell(ws, f"B{t2}", 1.25, BLUE, DSCR, fill=YELLOW)
+    _cell(ws, f"D{r}", "BENCHMARK GROSS ($/yr) BY MARKET", HDR_FONT, fill=HDR_FILL)
+    for j, h in enumerate(["3BR no pool", "3BR pool", "4BR+ no pool", "4BR+ pool"]):
+        _cell(ws, f"{get_column_letter(5 + j)}{r}", h, HDR_FONT, fill=HDR_FILL, align=CENTER)
+    ws.merge_cells(f"I{r}:P{r}")
+    _cell(ws, f"I{r}", "Basis", HDR_FONT, fill=HDR_FILL)
+    b_first = r + 1
+    for k, (mkt, *vals) in enumerate(PR_BENCH):
+        rr = b_first + k
+        _cell(ws, f"D{rr}", mkt)
+        for j, v in enumerate(vals):
+            _cell(ws, f"{get_column_letter(5 + j)}{rr}", v, BLUE, USD)
+    b_last = b_first + len(PR_BENCH) - 1
+    ws[f"I{b_first}"] = ("Analyst estimates anchored to seller-stated incomes already in this workbook (West Bradenton "
+                         "4BR pool $63-89k; Seminole $71k; Largo $51k; Cape Coral $60k). Sarasota County and Siesta Key "
+                         "rows are 30-day+ seasonal (county 30-day minimum). Overwrite with AirDNA/PriceLabs comps.")
+    ws[f"I{b_first}"].font = SUB
+    ws[f"I{b_first}"].alignment = WRAP
+    ws.merge_cells(f"I{b_first}:P{b_last}")
+    bench_mk = f"$D${b_first}:$D${b_last}"
+    bench_val = f"$E${b_first}:$H${b_last}"
+
+    hrow = b_last + 2
+    for i, (h, w, kind) in enumerate(PR_COLS, start=1):
+        col = get_column_letter(i)
+        ws.column_dimensions[col].width = w
+        _cell(ws, f"{col}{hrow}", h, HDR_FONT, fill=CALC_HDR_FILL if kind in ("calc", "link") else HDR_FILL,
+              align=CENTER)
+    ws.row_dimensions[hrow].height = 42
+
+    first = hrow + 1
+    for k, rec in enumerate(PR_ROWS):
+        row = first + k
+        c = {h: f"{PR_COL[h]}{row}" for h in PR_COL}
+        ltv = f"(1-{c['Down %']})"
+        req = (f"={c['PITIA ($/mo)']}*12*{{t}}/{R['haircut']}")
+        formulas = {
+            "Down %": f"={R['down']}",
+            "Loan": f"={c['List Price']}*{ltv}",
+            "Rate": f"=IF({ltv}>0.75,{R['rate80']},IF({ltv}>0.7,{R['rate75']},{R['rate70']}))",
+            "PITIA ($/mo)": (f"=PMT({c['Rate']}/12,{R['term']},-{c['Loan']})"
+                             f"+{c['List Price']}*INDEX({R['county_tax']},MATCH({c['County']},{R['counties']},0))/12"
+                             f"+(INDEX({R['county_ins']},MATCH({c['County']},{R['counties']},0))"
+                             f"+INDEX({R['zone_cost']},MATCH({c['Flood Zone']},{R['zones']},0)))/12"),
+            "Req. Gross DSCR 1.00 ($/yr)": req.format(t=f"$B${t1}"),
+            "Req. Gross DSCR 1.25 ($/yr)": req.format(t=f"$B${t2}"),
+            "Cash to Close": f"={c['List Price']}*({c['Down %']}+{R['closing']})",
+            "Beds (screen)": f"=IF(ISNUMBER({c['Beds']}),{c['Beds']},IF({c['SqFt']}>=2000,4,3))",
+            "Benchmark Gross ($/yr)": (f"=IFERROR(INDEX({bench_val},MATCH({c['Market (benchmark)']},{bench_mk},0),"
+                                       f"1+IF({c['Beds (screen)']}>=4,2,0)+IF({c['Pool']}=\"Y\",1,0)),0)"),
+            "Benchmark / Req. 1.00": f"=IFERROR({c['Benchmark Gross ($/yr)']}/{c['Req. Gross DSCR 1.00 ($/yr)']},0)",
+            "DSCR Screen": (f"=IF(ISNUMBER(SEARCH(\"Mobile\",{c['Type']})),\"EXCLUDED\","
+                            f"IF({c['Benchmark Gross ($/yr)']}>={c['Req. Gross DSCR 1.25 ($/yr)']},\"PASS\","
+                            f"IF({c['Benchmark Gross ($/yr)']}>={c['Req. Gross DSCR 1.00 ($/yr)']},\"MARGINAL\",\"FAIL\")))"),
+        }
+        vals = {
+            "Address": rec["address"], "City / ZIP": rec["city"], "County": rec["county"],
+            "Market (benchmark)": rec["market"], "Type": rec["type"], "Beds": rec["beds"], "Baths": rec["baths"],
+            "SqFt": rec["sqft"], "Year": rec["year"], "List Price": rec["list"], "DOM": rec["dom"],
+            "Last Sale Date": rec["last_date"], "Last Sale Price": rec["last_price"], "Est. Equity": rec["equity"],
+            "Owner Type": rec["owner"], "Absentee": rec["absentee"], "Pool": rec["pool"], "Flood Zone": rec["flood"],
+            "Tier": rec["tier"], "Notes": rec["notes"],
+        }
+        for h, _, kind in PR_COLS:
+            ref = f"{PR_COL[h]}{row}"
+            if kind == "calc":
+                _cell(ws, ref, formulas[h], BLACK, PR_FMT.get(h))
+            elif kind == "link":
+                _cell(ws, ref, formulas[h], GREEN, PR_FMT.get(h))
+            else:
+                _cell(ws, ref, vals[h], BLUE, PR_FMT.get(h), align=WRAP if h == "Notes" else None)
+            if k % 2 == 1:
+                ws[ref].fill = BAND
+        if rec.get("highlight"):
+            for h in ("Address", "DSCR Screen"):
+                ws[f"{PR_COL[h]}{row}"].fill = YELLOW
+    last = first + len(PR_ROWS) - 1
+    dv_flood = DataValidation(type="list", formula1=f"={A}!$B$22:$B$25", allow_blank=False)
+    dv_pool = DataValidation(type="list", formula1='"Y,N"', allow_blank=False)
+    dv_mkt = DataValidation(type="list", formula1=f"={bench_mk}", allow_blank=False)
+    for dv, h in ((dv_flood, "Flood Zone"), (dv_pool, "Pool"), (dv_mkt, "Market (benchmark)")):
+        ws.add_data_validation(dv)
+        dv.add(f"{PR_COL[h]}{first}:{PR_COL[h]}{last}")
+    ws.auto_filter.ref = f"A{hrow}:{PR_COL['Notes']}{last}"
+    ws.freeze_panes = ws[f"C{first}"]
+
+
 def build_summary(wb, firsts):
     ws = wb.create_sheet("Summary", 0)
     ws["A1"] = "STR DSCR Search: Summary of Top Picks"
@@ -477,6 +611,7 @@ def main():
         for idx in spec.get("scenario_rows", []):
             picks.append((spec["sheet"], first + idx))
     build_scenarios(wb, R, picks)
+    build_propertyradar(wb, R)
     if MARKETS:
         build_table_sheet(wb, "Other SWFL Markets", MARKETS["title"], MARKETS["subtitle"],
                           MARKETS["headers"], MARKETS["widths"], MARKETS["rows"])
