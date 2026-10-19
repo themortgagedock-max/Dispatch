@@ -31,12 +31,14 @@ Rates below are placeholders. Overwrite them with your live rate sheet: 80% LTV 
 | Cash in (down + closing − credit) | $117.6k | **$145.6k** | $173.6k |
 | PITIA | $4,499 | **$4,232** | $4,008 |
 | DSCR on gross / at 80% haircut | 1.57 / 1.26 | **1.67 / 1.34** | 1.77 / 1.41 |
-| Cash flow, self-managed (conservative) | −$6.0k | **−$2.8k** | −$0.1k |
-| Cash flow, full-service management | −$23.0k | −$19.8k | −$17.1k |
+| Cash flow, self-managed | +$1.5k | **+$4.7k** | +$7.4k |
+| Cash flow, full-service management | −$15.5k | −$12.3k | −$9.6k |
 
 **Recommendation: 25% down.** The extra $28k beyond 20% improves cash flow by about $3.2k a year, roughly an 11% return on that money from the lower rate tier and smaller loan. It also fits her original $150k plan.
 
-The cash-flow lines are conservative. They assume 10% platform fees and 10% cleaning on top of the seller's gross. If the seller's "gross" is payouts with cleaning fees included, add about $5–10k a year.
+Cleaning is **not** counted as a cost: guests pay it as a cleaning fee, which passes straight to the cleaner. So the gross used for DSCR and cash flow must **exclude** guest-paid cleaning fees. If a seller's "gross" includes them, back them out before running the numbers. Platform fees stay at 10% of gross.
+
+*(Updated 2026-10-19: cleaning was previously modeled at 10% of gross, which understated cash flow by about $8.5k a year on #1.)*
 
 Running the numbers for her bigger balance sheet:
 - **A bigger budget doesn't buy a better yield.** Over-ceiling STRs with documented income have lower gross yields than #1's 15.2%:
@@ -190,15 +192,15 @@ Running the numbers for her bigger balance sheet:
 |---|---|
 | Full-service management | 20% (local range 18–30%) |
 | Platform fees | 10% blended (Airbnb's host-only fee is now 15.5%) |
-| Cleaning | 10% (offset by guest-paid fees if they're in the gross) |
+| Cleaning | 0%: passed through to guests as a cleaning fee (gross must exclude guest-paid cleaning fees) |
 | Maintenance/supplies | 8% |
 | CapEx reserve | 5% |
 | Utilities | $6k/yr |
 | Pool/lawn/pest | $3k/yr |
 
-**Seasonal (30-day+) profile:** management 12%, platform 2%, cleaning 3%, maintenance 6%, CapEx 5%, plus the same fixed costs.
+**Seasonal (30-day+) profile:** management 12%, platform 2%, cleaning 0% (passed through to tenant), maintenance 6%, CapEx 5%, plus the same fixed costs.
 
-**Reality check:** at about 7.875%, even the #1 pick is **roughly breakeven if she self-manages or uses a 10–15% co-host** (about −$7k to +$3k/yr depending on how the seller reports gross). It runs **about −$24k/yr with full-service management.** The return comes from equity build, appreciation, personal use, and possibly taxes: cost segregation plus 100% bonus depreciation, with the STR material-participation rules (average stay of 7 days or less; CPA to confirm). If she won't self-manage, push for an interest-only option or a seller-paid rate buydown.
+**Reality check:** at the current placeholder rates (7.25% at 75% LTV), the #1 pick nets about **+$4.7k/yr self-managed**. With a 10–15% co-host it's roughly breakeven to −$4k. It runs **about −$12k/yr with full-service management.** The return comes from equity build, appreciation, personal use, and possibly taxes: cost segregation plus 100% bonus depreciation, with the STR material-participation rules (average stay of 7 days or less; CPA to confirm). If she won't self-manage, push for an interest-only option or a seller-paid rate buydown.
 
 Model: `str-deal-search/dscr_model.py` (all assumptions at the top; run with `python3 dscr_model.py candidates.json`).
 

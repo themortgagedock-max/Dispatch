@@ -520,7 +520,7 @@ SUMMARY = [
 SUMMARY_NOTES = [
     "Buyer: 800 FICO, $150k earmarked + $550k brokerage + $60k checking. Recommended structure: 25% down, 3% seller credit to rate buydown.",
     "Rates are placeholders (7.50 / 7.25 / 7.125% by LTV tier): overwrite on the Assumptions tab and every tab reflows.",
-    "Cash flow is conservative (10% platform + 10% cleaning on top of seller gross). A co-host at 10-15% is what makes these work; full-service PM does not cash flow at today's rates.",
+    "Cleaning is not a cost (passed through to guests as a cleaning fee): use gross EXCLUDING guest-paid cleaning fees. Platform fees 10%. #1 nets ~+$4.7k/yr self-managed; a 10-15% co-host is about breakeven; full-service PM does not cash flow at today's rates.",
     "Pinellas: nightly SFH STRs are legal mainly in unincorporated county (Certificate of Use), Largo, Indian Rocks Beach, Redington Beach. St. Pete, St. Pete Beach, Clearwater residential, Gulfport, Dunedin = 30-day+.",
     "Other SWFL: Cape Coral Gulf-access canals (33904/33914) are the best alternative market; Charlotte Harbor canals and unincorporated East Naples next. Avoid Pasco, Citrus, Hernando, City of Naples.",
     "Keys: under $950k, documented income is almost all condos in a few STR-legal complexes (Ocean Pointe, Kawama, Hawks Cay). Houses with transferable rental rights are $1M+; county/Islamorada permits don't transfer, Marathon/Key Colony Beach (weekly) are the house plays. Keys insurance and HOAs push PITIA ~40% above the mainland.",
