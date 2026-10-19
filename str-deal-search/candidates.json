@@ -1,0 +1,14 @@
+[
+ {"name":"8404 43rd Ave Ter W @list","price":584900,"county":"Manatee","gross":85000,"flood":"?","pool":true},
+ {"name":"8404 43rd Ave Ter W @560k+3%cr","price":560000,"county":"Manatee","gross":85000,"flood":"?","pool":true,"seller_credit":16800},
+ {"name":"2801 23rd Ave W @list","price":645000,"county":"Manatee","gross":89000,"flood":"?","pool":true},
+ {"name":"2801 23rd Ave W @575k","price":575000,"county":"Manatee","gross":89000,"flood":"?","pool":true},
+ {"name":"2245 Bahia Vista duplex (wk min)","price":475000,"county":"Sarasota","gross":60000,"flood":"X","pool":false},
+ {"name":"1415 36th St W (~54k)","price":474999,"county":"Manatee","gross":54000,"flood":"X","pool":true},
+ {"name":"3409 18th Ave Dr W (~60k)","price":529000,"county":"Manatee","gross":60000,"flood":"?","pool":true},
+ {"name":"5318 17th St W duplex (53k+~20k LTR)","price":475000,"county":"Manatee","gross":73000,"flood":"?","pool":false},
+ {"name":"2142 Waldemere (50k, wk min)","price":524900,"county":"Sarasota","gross":50157,"flood":"X","pool":false},
+ {"name":"7405 12th Ave W (~48k)","price":550000,"county":"Manatee","gross":48000,"flood":"?","pool":true},
+ {"name":"2705 2nd Ave W (40k)","price":385000,"county":"Manatee","gross":40000,"flood":"X","pool":false},
+ {"name":"4711 Hollingsworth triplex (102k, monthly)","price":655000,"county":"Sarasota","gross":102000,"flood":"?","pool":false,"profile":"seasonal"}
+]
