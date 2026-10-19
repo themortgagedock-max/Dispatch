@@ -18,7 +18,7 @@ from workbook_data import (
     AS_OF, BUYER, CANDIDATE_SHEETS, CHECKLIST, COUNTY_TAX, KEYS_MARKETS, MARKETS, RULES, SOURCES, SUMMARY,
     SUMMARY_NOTES,
 )
-from propertyradar_data import PR_BENCH, PR_META, PR_ROWS
+from propertyradar_data import PR_BENCH, PR_META, PR_ROWS, PR_VERIFY
 
 OUT = Path(__file__).with_name("STR_DSCR_Analysis.xlsx")
 
@@ -439,6 +439,23 @@ def build_propertyradar(wb, R):
         ws.merge_cells(f"B{r}:P{r}")
         ws.row_dimensions[r].height = 26
         r += 1
+
+    # Verification lookups on the Summary picks
+    r += 1
+    vh = ["Summary pick", "Owner type", "Mail = property", "Exemption?", "Last sale", "Last sale $", "Loan balance",
+          "AVM", "Equity %", "List price", "DOM", "Listed", "Finding"]
+    for j, h in enumerate(vh):
+        _cell(ws, f"{get_column_letter(1 + j)}{r}", h, HDR_FONT, fill=HDR_FILL, align=CENTER)
+    ws.merge_cells(f"M{r}:AE{r}")
+    for rec in PR_VERIFY:
+        r += 1
+        for j, v in enumerate(rec):
+            col = get_column_letter(1 + j)
+            fmt = PCT if j == 8 else ("0" if j == 10 else (USD if isinstance(v, (int, float)) else None))
+            _cell(ws, f"{col}{r}", v, BLUE, fmt, align=WRAP if j == 12 else None)
+        ws.merge_cells(f"M{r}:AE{r}")
+        ws.row_dimensions[r].height = 40
+    r += 1
 
     # Screen targets + benchmark table
     r += 1

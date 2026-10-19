@@ -346,8 +346,10 @@ The Keys don't beat Manatee for this buyer:
 The full list is on the `PropertyRadar` tab of `STR_DSCR_Analysis.xlsx`. Every row uses live formulas tied to the Assumptions tab.
 
 ### What was pulled
-- **Spend:** 193 records = **193 credits** of the 250-credit cap, leaving 57 in reserve.
-  - 1 record costs 1 credit. A 1-record test confirmed it: the API's free-record counter fell from 10,000 to 9,999. The API reports `totalCost` as $0 because purchases draw on the account allowance.
+- **Spend:** 197 property records in total (193 in the screen + 4 verification lookups), with **$0 charged and 0 of the 250 contact credits used.**
+  - Property records draw on a separate monthly free-record allowance. Each record takes 1 from it: the counter went from 10,000 to 9,803, and every call returned `totalCost` 0.
+  - Counted conservatively as credits against the 250 cap, that's 197, which is still under the 200 target.
+  - Of the 193 screen records, **190 are new** and 3 were already in the workbook.
   - Counts and previews (`Purchase=0`) are free.
   - No owner contact data, phone or email add-ons were bought, and no skip tracing was done.
 - **Filters on every tier:**
@@ -399,3 +401,16 @@ PropertyRadar has no rental income, so each house gets a required-rent test.
   - 1039 Madison: 2BR.
   - 6513 29th Ave W: no pool mentioned.
 - Listing pages were blocked, so the web findings come from search snippets only. Confirm jurisdiction on the county appraiser, especially 2225 Jaffa Pl (Clearwater city limits mean a 30-day minimum).
+
+### Verification lookups on the Summary picks
+I looked up 4 picks as new records and re-read 1 (2801 23rd Ave W) for free. Owner names were not requested. Full table is at the top of the `PropertyRadar` tab.
+
+| Pick | Owner type / exemption | Loan vs AVM | Finding |
+|---|---|---|---|
+| **8404 43rd Ave Ter W** (#1) | Individual (married). Mailing differs, but an exemption flag is set. | **$516k loan vs $532k AVM (3% equity)** | **Two red flags:** (1) an exemption, possibly homestead, on a house marketed with $85k of STR income; (2) at $560k with a 3% credit, the seller nets about $512k against a ~$516k payoff. Confirm the exemption on the Manatee PAO. Expect the seller to push back on the credit. Plan B is ~$570k with a 1–2% credit, or a straight price cut with the credit dropped. |
+| 5318 17th St W (#2) | LLC/Corp | $325k loan vs $379k AVM | PropertyRadar classifies it as MFR, which supports the duplex. $460k clears the payoff. |
+| 2801 23rd Ave W (#3) | Individual, absentee | AVM $431k | Still listed at $645k. The appraisal gap is real. |
+| 12565 81st Ave, Seminole | Multi-owner, **mails to the property** | $288k loan vs $357k AVM | Possibly owner-occupied. Check homestead before trusting "Airbnb since 2022." |
+| 4000 46th St N, St Pete | Multi-owner, exemption flag | $288k loan vs $329k AVM | Bought 2/2025 for $330k; ask is $500k. Large appraisal gap. |
+
+All five are still actively listed (`isListedForSale` = 1).

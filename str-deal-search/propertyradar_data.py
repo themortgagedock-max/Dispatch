@@ -4671,3 +4671,21 @@ PR_BENCH = [
     ("Cape Coral pool (STR)", 45000, 55000, 52000, 65000),
     ("FMB / Englewood", 42000, 52000, 48000, 60000),
 ]
+
+# Verification lookups on Summary picks (2026-10-19; 4 records bought + 1 free re-read). Owner names not requested.
+# Exempt? = mailing address differs but PropertyRadar's "same mailing OR exempt" flag is set -> a tax exemption is on
+# the parcel (often homestead; confirm on the county property appraiser).
+PR_VERIFY = [
+    # address, owner type, mailing same as property, exempt?, last sale date, last sale $, loan balance, AVM, equity %, list $, DOM, listed?, note
+    ("8404 43rd Ave Ter W, Bradenton 34209", "Individual (married)", "N", "Likely", "2023-08-14", 595000, 516458, 532465, 0.03, 584900, 26, "Y",
+     "RED FLAGS: exemption flag on a claimed $85k STR (homestead would contradict rental use); ~3% equity. At $560k with a 3% credit and ~5.5% "
+     "seller costs, seller nets ~$512k vs ~$516k payoff, so they would have to bring cash. Expect pushback; consider ~$570k with a smaller credit."),
+    ("5318 17th St W, Bradenton 34207", "LLC/Corp", "N", "Flag set (corporate, so not homestead)", "2024-04-09", 420000, 325183, 379031, 0.14, 475000, 18, "Y",
+     "PropertyRadar types it MFR (supports the duplex story; still confirm legal nonconforming use). $460k offer clears the payoff."),
+    ("2801 23rd Ave W, Bradenton 34205", "Individual", "N", "No (absentee)", "2024-03-04", 474000, None, 430669, None, 645000, 24, "Y",
+     "Absentee, consistent with STR use. AVM $431k vs $645k ask: appraisal risk confirmed."),
+    ("12565 81st Ave, Seminole 33776", "Individual (multi)", "Y", "Unknown", "2021-04-16", 235000, 287873, 356997, 0.19, 499000, 29, "Y",
+     "Owner mails to the property: may be owner-occupied/homesteaded. Check before trusting 'Airbnb since 2022'. AVM $357k vs $499k ask."),
+    ("4000 46th St N, St Petersburg 33714", "Individual (multi)", "N", "Likely", "2025-02-19", 330000, 287578, 329488, 0.13, 500000, 18, "Y",
+     "Bought 2/2025 at $330k; ask $500k and AVM $329k: big appraisal gap. Exemption flag set; confirm homestead status."),
+]

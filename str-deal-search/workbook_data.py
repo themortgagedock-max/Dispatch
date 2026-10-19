@@ -507,7 +507,7 @@ CANDIDATE_SHEETS.append(SWFL)
 
 # Summary tab: (sheet, 0-based row index within that sheet's rows, verdict)
 SUMMARY = [
-    ("Manatee-Sarasota", 0, "#1 OVERALL: write it. Verify FEMA zone, T12 payouts, appraisal."),
+    ("Manatee-Sarasota", 0, "#1 OVERALL: write it. PropertyRadar: ~$516k loan (3% equity) and an exemption flag (possible homestead). Seller may not clear payoff at $560k + 3%; verify homestead, T12, FEMA, appraisal."),
     ("Manatee-Sarasota", 1, "Backup: cheapest, STR + LTR hedge. Confirm legal duplex."),
     ("Manatee-Sarasota", 2, "Best income record; appraisal + sq-ft risk. Aggressive offer only."),
     ("Pinellas", 0, "Best Pinellas: licensed since 2022. 'Estimated' $71k: get T12. Confirm Seminole license transfers."),
