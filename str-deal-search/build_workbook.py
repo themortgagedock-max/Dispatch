@@ -99,7 +99,7 @@ def build_assumptions(wb):
         ("Closing costs (% of price)", 0.04, PCT, "Points/fees, FL doc stamps 0.35% + intangible 0.2% of loan, title, 12-mo prepaid insurance, escrow."),
         ("Reserves required (months PITIA)", 6, "0", "Covered by brokerage; shown for lender sizing only."),
         ("Lender income haircut (counted share of gross)", 0.80, PCT, "Many STR DSCR lenders count ~80% of gross or T12 net of mgmt. Use DSCR (haircut) column to qualify."),
-        ("Base insurance ($/yr): HO + wind + $1M STR liability", 7000, USD, "Mainland CBS home ~$500k. Get quotes; barrier islands higher."),
+        ("Default base insurance ($/yr): HO + wind + $1M STR liability", 7000, USD, "Mainland CBS home ~$500k. Per-county overrides in the county table below (e.g., Monroe/Keys)."),
     ]
     for i, (label, val, fmt, note) in enumerate(loan_rows, start=r + 1):
         _cell(ws, f"B{i}", label)
@@ -125,12 +125,18 @@ def build_assumptions(wb):
 
     # County tax: B28:C(28+n)
     r = 27
-    _cell(ws, f"B{r}", "PROPERTY TAX BY COUNTY (% of price, non-homestead)", HDR_FONT, fill=HDR_FILL)
-    _cell(ws, f"C{r}", "Rate", HDR_FONT, fill=HDR_FILL)
+    _cell(ws, f"B{r}", "BY COUNTY: PROPERTY TAX (% of price, non-homestead) + BASE INSURANCE", HDR_FONT, fill=HDR_FILL)
+    _cell(ws, f"C{r}", "Tax rate", HDR_FONT, fill=HDR_FILL)
+    _cell(ws, f"D{r}", "Base ins. $/yr", HDR_FONT, fill=HDR_FILL)
     _cell(ws, f"I{r}", "Note / source", HDR_FONT, fill=HDR_FILL)
-    for i, (cty, v, note) in enumerate(COUNTY_TAX, start=r + 1):
+    for i, rec in enumerate(COUNTY_TAX, start=r + 1):
+        cty, v, ins, note = rec if len(rec) == 4 else (rec[0], rec[1], None, rec[2])
         _cell(ws, f"B{i}", cty)
         _cell(ws, f"C{i}", v, BLUE, PCT3)
+        if ins is None:
+            _cell(ws, f"D{i}", "=$C$19", BLACK, USD)
+        else:
+            _cell(ws, f"D{i}", ins, BLUE, USD, fill=YELLOW)
         _cell(ws, f"I{i}", note, SUB, align=WRAP)
     tax_first, tax_last = r + 1, r + len(COUNTY_TAX)
 
@@ -175,6 +181,7 @@ def build_assumptions(wb):
         "reserves": f"{A}!$C$17", "haircut": f"{A}!$C$18", "ins": f"{A}!$C$19",
         "zones": f"{A}!$B$22:$B$25", "zone_cost": f"{A}!$C$22:$C$25",
         "counties": f"{A}!$B${tax_first}:$B${tax_last}", "county_tax": f"{A}!$C${tax_first}:$C${tax_last}",
+        "county_ins": f"{A}!$D${tax_first}:$D${tax_last}",
         "profiles": f"{A}!$B${prof_first}:$B${prof_last}",
         "mgmt": f"{A}!$C${prof_first}:$C${prof_last}",
         "nonmgmt": f"{A}!$H${prof_first}:$H${prof_last}",
@@ -214,7 +221,8 @@ def cand_formulas(row, R):
         "Rate": f"=IF({ltv}>0.75,{R['rate80']},IF({ltv}>0.7,{R['rate75']},{R['rate70']}))",
         "P&I ($/mo)": f"=PMT({c['Rate']}/12,{R['term']},-{c['Loan Amount']})",
         "Taxes ($/mo)": f"={c['Offer Price']}*INDEX({R['county_tax']},MATCH({c['County']},{R['counties']},0))/12",
-        "Ins + Flood ($/mo)": f"=({R['ins']}+INDEX({R['zone_cost']},MATCH({c['Flood Zone']},{R['zones']},0)))/12",
+        "Ins + Flood ($/mo)": (f"=(INDEX({R['county_ins']},MATCH({c['County']},{R['counties']},0))"
+                               f"+INDEX({R['zone_cost']},MATCH({c['Flood Zone']},{R['zones']},0)))/12"),
         "PITIA ($/mo)": f"={c['P&I ($/mo)']}+{c['Taxes ($/mo)']}+{c['Ins + Flood ($/mo)']}+{c['HOA ($/mo)']}",
         "DSCR (gross)": f"=IFERROR({c['Stated Gross Income ($/yr)']}/12/{c['PITIA ($/mo)']},0)",
         "DSCR (lender haircut)": f"=IFERROR({c['Stated Gross Income ($/yr)']}*{R['haircut']}/12/{c['PITIA ($/mo)']},0)",
@@ -366,7 +374,8 @@ def build_scenarios(wb, R, picks):
             _cell(ws, f"G{r}", f"=IF({ltv}>0.75,{R['rate80']},IF({ltv}>0.7,{R['rate75']},{R['rate70']}))", BLACK, PCT3)
             _cell(ws, f"H{r}", f"=PMT(G{r}/12,{R['term']},-F{r})", BLACK, USD)
             pitia = (f"=H{r}+C{r}*INDEX({R['county_tax']},MATCH({s['County']},{R['counties']},0))/12"
-                     f"+({R['ins']}+INDEX({R['zone_cost']},MATCH({s['Flood Zone']},{R['zones']},0)))/12+{s['HOA ($/mo)']}")
+                     f"+(INDEX({R['county_ins']},MATCH({s['County']},{R['counties']},0))"
+                     f"+INDEX({R['zone_cost']},MATCH({s['Flood Zone']},{R['zones']},0)))/12+{s['HOA ($/mo)']}")
             _cell(ws, f"I{r}", pitia, BLACK, USD)
             _cell(ws, f"J{r}", f"=IFERROR(E{r}/12/I{r},0)", BLACK, DSCR)
             _cell(ws, f"K{r}", f"=IFERROR(E{r}*{R['haircut']}/12/I{r},0)", BLACK, DSCR)
