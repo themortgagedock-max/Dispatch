@@ -416,3 +416,52 @@ I looked up 4 picks as new records and re-read 1 (2801 23rd Ave W) for free. Own
 | 4000 46th St N, St Pete | Multi-owner, exemption flag | $288k loan vs $329k AVM | Bought 2/2025 for $330k; ask is $500k. Large appraisal gap. |
 
 All five are still actively listed (`isListedForSale` = 1).
+
+### Islands: Anna Maria, Holmes Beach, Bradenton Beach, Longboat Key (added 2026-10-19)
+Free counts first, then 25 records bought. Every call returned `totalCost` $0. Session total: 222 records.
+
+**What's listed:**
+
+| ZIP | Listed (all types) | Houses under $650k | What's under $800k |
+|---|---|---|---|
+| 34216 Anna Maria | 64 | **0** (cheapest house band is $1–1.5M) | nothing |
+| 34217 Holmes Beach / Bradenton Beach | 192 | 5 | 38 condos under $650k; a few townhouse and half-duplex units |
+| 34228 Longboat Key | 303 | 8 | 64 condos under $650k; Harbourside townhomes |
+
+**What the 25 records turned out to be:**
+- 11 are mobile-home lots (Sandpiper, Twin Shores, Longbeach Village). Not DSCR-eligible.
+- The rest are 2BR townhouses or villas and half-duplex units.
+- 2803 Avenue C, Holmes Beach is the one $467.5k 3/2 house. It is **not actually for sale**: PropertyRadar's record is stale, and $467.5k is its 2020 sale price.
+
+**Best island units, all failing at 25% down:**
+- **120 52nd St, Holmes Beach**
+  - $699k, 2/1.5.
+  - City STR license, 7-night minimum, "established rental history," turnkey.
+  - It's a short sale and likely pending.
+  - Needs about $81k gross to reach DSCR 1.00. A 2BR here grosses about $50–60k.
+- **403 63rd St, Holmes Beach (Seaside Gardens villa)**
+  - $700k, furnished.
+  - Advertised at $1,500/week or $4,400/month, which works out to roughly $45–60k a year. It needs about $81k.
+- **202 Peacock Ln Unit A, Holmes Beach**
+  - $775k, 3/2, 972 sf, weekly rental zone.
+  - Needs about $88k.
+  - Unit B is listed separately for about $880k. The whole building is about $1.65M.
+- **3303 6th Ave Unit B, Holmes Beach**
+  - $695k, 2/2, elevated, weekly rental zone.
+  - May already be sold.
+- **651 Jungle Queen Way, Longboat Key**
+  - $780k bayfront house, but it's a storm-remediated shell "ready to be rebuilt."
+  - Not financeable as an STR as-is, and Longboat Key's residential zones have a 30-day minimum.
+
+**Verdict:** the islands don't fit this buyer at this budget.
+- Houses start around $1M or more.
+- Anything under $800k is a 2BR unit or half-duplex that needs $80–90k gross to reach DSCR 1.00. That's 1.4–1.8 times what a 2BR island rental realistically earns.
+- Every unit is in an AE zone, so flood insurance is higher.
+- They also need about $200–225k cash at 25% down.
+
+**The only island path that pencils:**
+- Buy a whole Holmes Beach R-2 duplex (both sides) for about $1.4–1.7M, with T12 income of $150k+.
+- That would take about $400–500k cash, meaning the brokerage, not the $150k.
+- Worth doing only if she wants island ownership more than yield.
+
+The screen now has island benchmarks plus a 2BR factor (2BR units are benchmarked at 75% of the 3BR figure). Both are editable on the PropertyRadar tab.

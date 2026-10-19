@@ -466,6 +466,9 @@ def build_propertyradar(wb, R):
     _cell(ws, f"B{t1}", 1.00, BLUE, DSCR, fill=YELLOW)
     _cell(ws, f"A{t2}", "DSCR target (preferred)")
     _cell(ws, f"B{t2}", 1.25, BLUE, DSCR, fill=YELLOW)
+    t3 = r + 3
+    _cell(ws, f"A{t3}", "2BR factor (x 3BR benchmark)")
+    _cell(ws, f"B{t3}", 0.75, BLUE, PCT)
     _cell(ws, f"D{r}", "BENCHMARK GROSS ($/yr) BY MARKET", HDR_FONT, fill=HDR_FILL)
     for j, h in enumerate(["3BR no pool", "3BR pool", "4BR+ no pool", "4BR+ pool"]):
         _cell(ws, f"{get_column_letter(5 + j)}{r}", h, HDR_FONT, fill=HDR_FILL, align=CENTER)
@@ -514,7 +517,7 @@ def build_propertyradar(wb, R):
             "Cash to Close": f"={c['List Price']}*({c['Down %']}+{R['closing']})",
             "Beds (screen)": f"=IF(ISNUMBER({c['Beds']}),{c['Beds']},IF({c['SqFt']}>=2000,4,3))",
             "Benchmark Gross ($/yr)": (f"=IFERROR(INDEX({bench_val},MATCH({c['Market (benchmark)']},{bench_mk},0),"
-                                       f"1+IF({c['Beds (screen)']}>=4,2,0)+IF({c['Pool']}=\"Y\",1,0)),0)"),
+                                       f"1+IF({c['Beds (screen)']}>=4,2,0)+IF({c['Pool']}=\"Y\",1,0))*IF({c['Beds (screen)']}<=2,$B${t3},1),0)"),
             "Benchmark / Req. 1.00": f"=IFERROR({c['Benchmark Gross ($/yr)']}/{c['Req. Gross DSCR 1.00 ($/yr)']},0)",
             "DSCR Screen": (f"=IF(ISNUMBER(SEARCH(\"Mobile\",{c['Type']})),\"EXCLUDED\","
                             f"IF({c['Benchmark Gross ($/yr)']}>={c['Req. Gross DSCR 1.25 ($/yr)']},\"PASS\","
