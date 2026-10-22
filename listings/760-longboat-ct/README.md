@@ -17,7 +17,7 @@ Edit `page.html`, then `python3 build.py && python3 qa.py`.
 - **All-in monthly cost** (hero + calculator): P&I, post-sale property tax, wind/HO, flood, PMI/dues. Conforming vs jumbo flag against the 2026 limit; Florida doc stamp (0.35%) and intangible (0.2%) taxes on the note.
 - **Property tax at the buyer's price**: the seller's 2025 bill ($773) vs the post-sale reset; homestead (2026 indexed $51,411), second home, Save Our Homes portability, and an **Amendment 3 (Nov 3, 2026 ballot)** toggle with the Dec 31, 2026 residency split. Full millage table.
 - **Flood + wind planning ranges** driven by elevation vs BFE, roof age, hip roof, and opening protection.
-- **Before-you-offer checklist** (saved per browser), North End Village facts, verified agent and lender license blocks, FAQ with matching FAQPage schema, and a full compliance footer.
+- **Before-you-offer checklist** (saved per browser) with a **Copy checklist** button that copies the whole list as a ready-to-send email to the buyer's agent, including their live estimates and `[done]` marks, plus an "Open in email" shortcut and a preview. North End Village facts, verified agent and lender license blocks, FAQ with matching FAQPage schema, and a full compliance footer.
 - **Copy my scenario** button: buyer copies their numbers to send to Eli. All finance CTAs point to `themortgagedock.com/strategy` with `utm_campaign=760_longboat_ct`.
 
 ## Data and verification log (retrieved 2026-10-22)
@@ -47,7 +47,7 @@ Edit `page.html`, then `python3 build.py && python3 qa.py`.
 3. **Tax district.** Bayside is inferred from location (east of Gulf of Mexico Dr). Confirm on the TRIM notice.
 4. **Non-ad valorem amount.** Uses the $773 total bill as a ceiling. Replace with the actual line items from the tax bill.
 5. **Insurance ranges** are modeled planning ranges, not quotes. Swap in real quotes once the Elevation Certificate is in hand.
-6. **Listing photos.** None included (MLS photo copyright). Add `{src, alt}` entries to `PHOTOS` in `page.html`; the gallery appears automatically.
+6. **Listing photos.** None included. Portal copies (Realtor.com, Zolo, Zillow) are copyrighted and MLS-licensed, so get the originals from Jesse (MLS photo download or Dropbox). Put them in `photos/`, add `{src, alt}` entries to `PHOTOS` in `page.html`, and the gallery appears automatically. For the artifact, publish the photos as supporting files alongside the page.
 
 ### Kept off the page on purpose
 

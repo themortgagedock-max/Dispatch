@@ -194,6 +194,8 @@ tr.grp td{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.1em;text-tr
 .todo span{color:var(--ink-2);font-size:.92rem}
 .todo li:has(input:checked) b{text-decoration:line-through;text-decoration-color:var(--accent);color:var(--ink-2)}
 .prog{font-family:var(--f-mono);font-size:.82rem;color:var(--ink-2)}
+.peek summary{cursor:pointer;font-size:.88rem;font-weight:600;color:var(--accent)}
+.peek textarea{display:block;width:100%;margin-top:10px;font-family:var(--f-mono);font-size:.82rem;line-height:1.55;color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:var(--r-sm);padding:12px;resize:vertical}
 .prog b{color:var(--accent)}
 
 /* People */
@@ -690,16 +692,25 @@ footer a{color:var(--keys)}
     <div class="work">
       <div class="card" style="padding-block:8px">
         <ol class="todo" id="todo">
-          <li><label><input type="checkbox" data-k="ec"><div><b>Get the Elevation Certificate</b><span>Ask the seller first. The Town of Longboat Key keeps many on file, or a surveyor can produce one in about a week.</span></div></label></li>
-          <li><label><input type="checkbox" data-k="nfip"><div><b>Request the seller's flood policy declarations page</b><span>Check the premium, coverage, and whether the policy can be assigned to you at closing.</span></div></label></li>
-          <li><label><input type="checkbox" data-k="insp"><div><b>Order wind mitigation and 4-point inspections</b><span>Insurers use both. Roof shape, roof-to-wall connections, and opening protection all move the wind premium.</span></div></label></li>
-          <li><label><input type="checkbox" data-k="permits"><div><b>Review what the restoration covered</b><span>Ask Jesse for the scope of work, and pull the permit history from the Town's building department.</span></div></label></li>
-          <li><label><input type="checkbox" data-k="fp"><div><b>Ask the Town about floodplain rules for future projects</b><span>In Zone AE, large remodels or additions can trigger the FEMA substantial improvement rule, which may require elevating the home. Know the limits before you plan changes.</span></div></label></li>
-          <li><label><input type="checkbox" data-k="quotes"><div><b>Get insurance quotes inside your inspection period</b><span>Bind coverage well before closing. Your lender needs proof of flood and wind coverage.</span></div></label></li>
-          <li><label><input type="checkbox" data-k="bill"><div><b>Pull the current tax bill</b><span>The Manatee County Tax Collector shows each non-ad valorem line, so you can replace the allowance above with the real figure.</span></div></label></li>
-          <li><label><input type="checkbox" data-k="res"><div><b>Map your residency date against Amendment 3</b><span>If you're moving to Florida, talk with a tax professional about timing before December 31, 2026.</span></div></label></li>
-          <li><label><input type="checkbox" data-k="preapp"><div><b>Get pre-approved with real taxes and insurance built in</b><span>A pre-approval that uses the $773 seller bill overstates what you can afford. Ask for one built on the post-sale numbers.</span></div></label></li>
+          <li><label><input type="checkbox" data-k="ec" data-ask="Elevation Certificate: can you request it from the listing agent? If there isn't one, the Town of Longboat Key may have it on file, or we can have a surveyor prepare one."><div><b>Get the Elevation Certificate</b><span>Ask the seller first. The Town of Longboat Key keeps many on file, or a surveyor can produce one in about a week.</span></div></label></li>
+          <li><label><input type="checkbox" data-k="nfip" data-ask="Seller's flood policy: please request the declarations page and current premium, and ask whether the NFIP policy can be assigned to me at closing."><div><b>Request the seller's flood policy declarations page</b><span>Check the premium, coverage, and whether the policy can be assigned to you at closing.</span></div></label></li>
+          <li><label><input type="checkbox" data-k="insp" data-ask="Inspections: let's schedule a wind mitigation inspection and a 4-point inspection along with the general home inspection."><div><b>Order wind mitigation and 4-point inspections</b><span>Insurers use both. Roof shape, roof-to-wall connections, and opening protection all move the wind premium.</span></div></label></li>
+          <li><label><input type="checkbox" data-k="permits" data-ask="Restoration and permits: please ask the listing agent (Jesse Griffin) for the scope of the restoration, and let's pull the permit history from the Town's building department."><div><b>Review what the restoration covered</b><span>Ask Jesse for the scope of work, and pull the permit history from the Town's building department.</span></div></label></li>
+          <li><label><input type="checkbox" data-k="fp" data-ask="Floodplain rules: can we confirm with the Town what limits apply to future remodels or additions in Zone AE under the FEMA substantial improvement rule?"><div><b>Ask the Town about floodplain rules for future projects</b><span>In Zone AE, large remodels or additions can trigger the FEMA substantial improvement rule, which may require elevating the home. Know the limits before you plan changes.</span></div></label></li>
+          <li><label><input type="checkbox" data-k="quotes" data-ask="Insurance quotes: I want flood and wind quotes in hand before the inspection period ends."><div><b>Get insurance quotes inside your inspection period</b><span>Bind coverage well before closing. Your lender needs proof of flood and wind coverage.</span></div></label></li>
+          <li><label><input type="checkbox" data-k="bill" data-ask="Tax bill: please pull the current Manatee County tax bill so I can see the non-ad valorem assessments."><div><b>Pull the current tax bill</b><span>The Manatee County Tax Collector shows each non-ad valorem line, so you can replace the allowance above with the real figure.</span></div></label></li>
+          <li><label><input type="checkbox" data-k="res" data-ask="Amendment 3 timing: I'm checking my Florida residency date against the December 31, 2026 cutoff with a tax professional, which may affect our closing date."><div><b>Map your residency date against Amendment 3</b><span>If you're moving to Florida, talk with a tax professional about timing before December 31, 2026.</span></div></label></li>
+          <li><label><input type="checkbox" data-k="preapp" data-ask="Financing: I'm getting pre-approved with the post-sale property taxes and insurance built in, not the seller's current $773 tax bill."><div><b>Get pre-approved with real taxes and insurance built in</b><span>A pre-approval that uses the $773 seller bill overstates what you can afford. Ask for one built on the post-sale numbers.</span></div></label></li>
         </ol>
+      </div>
+      <div class="card" style="display:grid;gap:12px">
+        <h3>Send this list to your agent</h3>
+        <p class="hint">One click copies the whole checklist as a ready-to-send email, with your current estimates and anything you've already checked off. Paste it into an email or text to your agent.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:10px">
+          <button class="btn btn-main" type="button" id="copy-chk">Copy checklist</button>
+          <a class="btn btn-line" id="mail-chk" href="mailto:">Open in email</a>
+        </div>
+        <details class="peek" id="chk-peek"><summary>Preview the email</summary><textarea id="chk-text" readonly rows="16" aria-label="Checklist email text"></textarea></details>
       </div>
     </div>
   </div>
@@ -975,6 +986,7 @@ footer a{color:var(--keys)}
 
     $("f-range").textContent = `${usd.format(ins.fLo)} to ${usd.format(ins.fHi)}`;
     $("w-range").textContent = `${usd.format(ins.wLo)} to ${usd.format(ins.wHi)}`;
+    syncChecklistEmail();
   }
 
   const update = () => (document.startViewTransition && !matchMedia("(prefers-reduced-motion: reduce)").matches ? document.startViewTransition(render) : render());
@@ -1025,6 +1037,33 @@ footer a{color:var(--keys)}
     b.addEventListener("change", () => { saved[b.dataset.k] = b.checked; try { localStorage.setItem(KEY, JSON.stringify(saved)); } catch (e) {} tally(); });
   });
   tally();
+
+  // Checklist as an email to the buyer's agent
+  function checklistEmail() {
+    const lines = [...boxes].map((b, i) => `${i + 1}. ${b.dataset.ask}${b.checked ? " [done]" : ""}`);
+    const est = last ? `My working estimates: property tax about ${usd.format(last.t.total)} a year after the sale, flood insurance ${usd.format(last.ins.fLo)} to ${usd.format(last.ins.fHi)} a year, wind and homeowners ${usd.format(last.ins.wLo)} to ${usd.format(last.ins.wHi)} a year, and about ${usd.format(last.total)} a month all in.` : "";
+    const subject = "760 Longboat Ct: items to cover before we write an offer";
+    const body = [
+      "Hi,", "",
+      "I'm looking at 760 Longboat Ct, Longboat Key, FL 34228, listed at $840,000. It's a 1920 home in flood zone AE, so before we write an offer I'd like to cover these:", "",
+      ...lines, "", est, "",
+      "Can you let me know which of these you can request from the listing agent, and how quickly?", "",
+      "Thanks,"
+    ].join("\n");
+    return { subject, body };
+  }
+  function syncChecklistEmail() {
+    const e = checklistEmail();
+    $("chk-text").value = `Subject: ${e.subject}\n\n${e.body}`;
+    $("mail-chk").href = `mailto:?subject=${encodeURIComponent(e.subject)}&body=${encodeURIComponent(e.body)}`;
+  }
+  boxes.forEach((b) => b.addEventListener("change", syncChecklistEmail));
+  $("copy-chk").addEventListener("click", async () => {
+    syncChecklistEmail();
+    const text = $("chk-text").value;
+    try { await navigator.clipboard.writeText(text); toast("Checklist copied. Paste it into an email to your agent."); }
+    catch (e) { $("chk-peek").open = true; const ta = $("chk-text"); ta.focus(); ta.select(); toast("Text selected. Press copy to finish."); }
+  });
 
   // Optional photo gallery
   if (PHOTOS.length) {
