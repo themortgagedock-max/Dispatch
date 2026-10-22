@@ -1,0 +1,1078 @@
+<title>760 Longboat Court</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="760 Longboat Ct, Longboat Key, FL 34228. A restored 1920 beach bungalow in the North End Village, listed at $840,000, with real post-sale property taxes, flood and wind insurance planning ranges, and an all-in monthly cost calculator.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap">
+<style>
+/* Layout: chart room. A deep-water hero plate with a schematic chart of the key, then a two-column
+   section grid (a narrow notes rail beside the working area) that stacks to one column on phones. */
+:root{
+  --deep:#0A1628; --deep-2:#0D2240; --deep-3:#1A3A5C; --on-deep:#EAF2F3; --on-deep-2:#A9BFCB; --keys:#2EC4B6; --gold:#C9A84C; --gold-ink:#0D2240;
+  --bg:#F1F5F5; --surface:#FFFFFF; --surface-2:#F4EDE0; --ink:#0D2240; --ink-2:#465A6E; --line:#D2DDE0; --line-2:#E4ECEE;
+  --accent:#15796D; --btn:#15796D; --btn-ink:#FFFFFF; --focus:#1A9B8A; --chip:#E3EEEC;
+  --good:#1B7448; --warn:#8A5410; --risk:#A8352A;
+  --s1:#0D2240; --s2:#15796D; --s3:#C9A84C; --s4:#5B8DB8; --s5:#93A3B0;
+  --f-display:"Playfair Display", Georgia, "Times New Roman", serif;
+  --f-body:"DM Sans", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --f-mono:"DM Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --r:14px; --r-sm:9px; --maxw:1140px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#08121F; --surface:#0F2037; --surface-2:#132A42; --ink:#E6EEF1; --ink-2:#A3B6C3; --line:#22395A; --line-2:#1A2F4A;
+    --accent:#2EC4B6; --btn:#2EC4B6; --btn-ink:#0A1628; --focus:#2EC4B6; --chip:#163651;
+    --good:#5BC98C; --warn:#E3A857; --risk:#F08A7E;
+    --s1:#A9C6E8; --s2:#2EC4B6; --s3:#C9A84C; --s4:#5B8DB8; --s5:#6E8195;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#08121F; --surface:#0F2037; --surface-2:#132A42; --ink:#E6EEF1; --ink-2:#A3B6C3; --line:#22395A; --line-2:#1A2F4A;
+  --accent:#2EC4B6; --btn:#2EC4B6; --btn-ink:#0A1628; --focus:#2EC4B6; --chip:#163651;
+  --good:#5BC98C; --warn:#E3A857; --risk:#F08A7E;
+  --s1:#A9C6E8; --s2:#2EC4B6; --s3:#C9A84C; --s4:#5B8DB8; --s5:#6E8195;
+  color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:border-box}
+[hidden]{display:none!important}
+img{max-width:100%}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--deep)}
+h1,h2,h3{font-family:var(--f-display);font-weight:600;line-height:1.15;text-wrap:balance;margin:0}
+p{margin:0;text-wrap:pretty}
+a{color:var(--accent);text-underline-offset:3px}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px;border-radius:6px}
+.mono,.num{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.wrap{max-width:var(--maxw);margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.eyebrow{font-family:var(--f-mono);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* Top bar */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:color-mix(in srgb,var(--deep) 94%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid color-mix(in srgb,var(--keys) 18%,transparent)}
+.bar .wrap{display:flex;align-items:center;gap:14px;padding-block:10px}
+.bar .mark{font-family:var(--f-display);color:var(--on-deep);font-size:1.05rem;white-space:nowrap;text-decoration:none}
+.bar nav{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;flex:1;min-width:0;mask-image:linear-gradient(90deg,#000 88%,transparent)}
+.bar nav::-webkit-scrollbar{display:none}
+.bar nav a{color:var(--on-deep-2);text-decoration:none;font-size:.86rem;padding:6px 10px;border-radius:999px;white-space:nowrap}
+.bar nav a:hover{color:var(--on-deep);background:color-mix(in srgb,var(--keys) 14%,transparent)}
+.bar .cta{flex:none;background:var(--gold);color:var(--gold-ink);font-weight:700;font-size:.84rem;padding:8px 14px;border-radius:999px;text-decoration:none;white-space:nowrap}
+@media (max-width:640px){.bar .mark{display:none}.bar .cta{padding:7px 11px}}
+
+/* Hero plate */
+.hero{background:
+  radial-gradient(120% 90% at 85% 10%,color-mix(in srgb,var(--deep-3) 70%,transparent),transparent 60%),
+  repeating-linear-gradient(0deg,color-mix(in srgb,var(--keys) 7%,transparent) 0 1px,transparent 1px 56px),
+  repeating-linear-gradient(90deg,color-mix(in srgb,var(--keys) 7%,transparent) 0 1px,transparent 1px 56px),
+  var(--deep);color:var(--on-deep);position:relative;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.9fr);gap:40px;padding-block:56px 64px;align-items:center}
+.hero .eyebrow{color:var(--keys)}
+.hero h1{font-size:clamp(2.5rem,6.4vw,4.6rem);font-weight:600;letter-spacing:-.01em;margin-top:14px;color:#fff}
+.hero h1 em{font-style:italic;font-weight:500;color:var(--keys)}
+.hero .lede{font-size:1.14rem;color:var(--on-deep-2);max-width:56ch;margin-top:16px}
+.coords{font-family:var(--f-mono);font-size:.78rem;color:var(--on-deep-2);letter-spacing:.04em;margin-top:18px;display:flex;flex-wrap:wrap;gap:6px 16px}
+.coords b{color:var(--on-deep);font-weight:500}
+.price-row{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 22px;margin-top:26px}
+.price{font-family:var(--f-display);font-size:clamp(2rem,4.4vw,2.9rem);color:#fff;font-weight:600}
+.price-note{font-family:var(--f-mono);font-size:.8rem;color:var(--on-deep-2)}
+.plate{margin-top:22px;display:grid;grid-template-columns:repeat(auto-fit,minmax(118px,1fr));border:1px solid color-mix(in srgb,var(--keys) 28%,transparent);border-radius:var(--r-sm);overflow:hidden}
+.plate div{padding:11px 14px;border-right:1px solid color-mix(in srgb,var(--keys) 18%,transparent);border-bottom:1px solid color-mix(in srgb,var(--keys) 18%,transparent);margin:0 -1px -1px 0}
+.plate dt{font-family:var(--f-mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--on-deep-2)}
+.plate dd{margin:2px 0 0;font-size:1.04rem;font-weight:600;color:#fff}
+.plate dd sup{color:var(--keys);font-weight:500}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.btn{display:inline-flex;align-items:center;gap:8px;font:inherit;font-weight:700;font-size:.95rem;border-radius:999px;padding:12px 20px;text-decoration:none;cursor:pointer;border:0;line-height:1.2}
+.btn-gold{background:var(--gold);color:var(--gold-ink)}
+.btn-gold:hover{background:#D6B862}
+.btn-ghost{background:transparent;color:var(--on-deep);box-shadow:inset 0 0 0 1.5px color-mix(in srgb,var(--on-deep) 45%,transparent)}
+.btn-ghost:hover{box-shadow:inset 0 0 0 1.5px var(--keys);color:#fff}
+.btn-main{background:var(--btn);color:var(--btn-ink)}
+.btn-main:hover{filter:brightness(1.08)}
+.btn-line{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--line)}
+.btn-line:hover{box-shadow:inset 0 0 0 1.5px var(--accent)}
+.btn svg{width:16px;height:16px;flex:none}
+
+.chart{position:relative}
+.chart svg{width:100%;height:auto;display:block;max-width:100%}
+.allin{margin-top:10px;background:color-mix(in srgb,var(--deep-2) 82%,transparent);border:1px solid color-mix(in srgb,var(--keys) 30%,transparent);border-radius:var(--r);padding:16px 18px;backdrop-filter:blur(6px)}
+.allin .k{font-family:var(--f-mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--on-deep-2)}
+.allin .v{font-family:var(--f-display);font-size:2.1rem;color:#fff;font-weight:600;line-height:1.1;margin-top:4px}
+.allin .v small{font-family:var(--f-body);font-size:.95rem;color:var(--on-deep-2);font-weight:500}
+.allin .sub{font-size:.86rem;color:var(--on-deep-2);margin-top:6px}
+.allin a{color:var(--keys)}
+.tide{position:absolute;left:0;right:0;bottom:-1px;height:38px;display:block;width:100%}
+@media (max-width:880px){.hero .wrap{grid-template-columns:1fr;gap:28px;padding-block:40px 56px}.chart{max-width:440px}}
+
+/* Sections */
+section.s{padding-block:64px}
+section.s + section.s{border-top:1px solid var(--line-2)}
+.s-grid{display:grid;grid-template-columns:230px minmax(0,1fr);gap:40px}
+.rail{position:sticky;top:84px;align-self:start;display:grid;gap:10px}
+.rail h2{font-size:clamp(1.7rem,3vw,2.2rem)}
+.rail p{color:var(--ink-2);font-size:.95rem}
+.work{display:grid;gap:22px;min-width:0}
+.lead{font-size:1.08rem;max-width:68ch}
+.lead strong{color:var(--ink)}
+@media (max-width:900px){.s-grid{grid-template-columns:1fr;gap:20px}.rail{position:static}section.s{padding-block:48px}}
+
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:22px;min-width:0;container-type:inline-size}
+.card h3{font-size:1.3rem}
+.card .hint{color:var(--ink-2);font-size:.9rem}
+.callout{background:var(--surface-2);border-radius:var(--r);padding:16px 18px;font-size:.95rem;display:grid;gap:6px;align-content:start}
+.callout b.t{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:500}
+.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+@media (max-width:760px){.two{grid-template-columns:1fr}}
+
+/* Controls */
+.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px 18px;align-items:start}
+.f{display:grid;gap:6px;min-width:0}
+.f label,.f .lbl{font-size:.84rem;font-weight:600;color:var(--ink)}
+.f .lbl small,.f label small{font-weight:400;color:var(--ink-2)}
+.in{display:flex;align-items:center;background:var(--bg);border:1.5px solid var(--line);border-radius:var(--r-sm);padding:0 10px;min-width:0}
+.in:focus-within{border-color:var(--accent)}
+.in span{font-family:var(--f-mono);color:var(--ink-2);font-size:.9rem}
+.in input{font:inherit;font-family:var(--f-mono);font-variant-numeric:tabular-nums;font-size:1rem;color:var(--ink);background:transparent;border:0;outline:0;padding:10px 6px;width:100%;min-width:0}
+select{font:inherit;font-size:.95rem;color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:var(--r-sm);padding:10px;width:100%;min-width:0}
+select:focus{border-color:var(--accent);outline:0}
+input[type=range]{width:100%;accent-color:var(--accent)}
+.seg{display:flex;flex-wrap:wrap;gap:6px}
+.seg label{position:relative;cursor:pointer}
+.seg input{position:absolute;opacity:0;inset:0;cursor:pointer}
+.seg span{display:inline-block;font-size:.86rem;font-weight:600;padding:8px 13px;border-radius:999px;border:1.5px solid var(--line);color:var(--ink-2);background:var(--bg)}
+.seg label:has(input:checked) span{background:var(--accent);border-color:var(--accent);color:var(--btn-ink)}
+.seg label:has(input:focus-visible) span{outline:3px solid var(--focus);outline-offset:2px}
+.seg label:has(input:disabled){opacity:.45;cursor:not-allowed}
+.check{display:flex;gap:10px;align-items:flex-start;font-size:.92rem;cursor:pointer}
+.check input{margin-top:4px;accent-color:var(--accent);width:17px;height:17px;flex:none}
+
+/* Outputs */
+.big{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px}
+.big .v{font-family:var(--f-display);font-size:clamp(2.1rem,5cqi,2.8rem);font-weight:600;line-height:1.05}
+.big .u{color:var(--ink-2);font-size:.95rem}
+.rows{display:grid;margin-top:14px}
+.row{display:grid;grid-template-columns:14px minmax(0,1fr) auto;gap:10px;align-items:center;padding:9px 0;border-bottom:1px dashed var(--line)}
+.row:last-child{border-bottom:0}
+.row i{width:12px;height:12px;border-radius:3px;display:block}
+.row .n{font-family:var(--f-mono);font-variant-numeric:tabular-nums;font-size:.95rem}
+.row .d{font-size:.92rem}
+.row .d small{display:block;color:var(--ink-2);font-size:.8rem}
+.stack{display:flex;height:16px;border-radius:999px;overflow:hidden;margin-top:16px;background:var(--line-2)}
+.stack span{display:block;height:100%;transition:flex-basis .5s ease}
+.pill{display:inline-flex;align-items:center;gap:6px;font-family:var(--f-mono);font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;padding:4px 10px;border-radius:999px;background:var(--chip);color:var(--ink)}
+.pill.risk{background:color-mix(in srgb,var(--risk) 16%,transparent);color:var(--risk)}
+.pill.good{background:color-mix(in srgb,var(--good) 16%,transparent);color:var(--good)}
+.pill.warn{background:color-mix(in srgb,var(--warn) 16%,transparent);color:var(--warn)}
+.kv{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.kv div{border-left:2px solid var(--line);padding-left:12px}
+.kv dt{font-family:var(--f-mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2)}
+.kv dd{margin:2px 0 0;font-weight:600}
+.compare{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.compare div{background:var(--bg);border-radius:var(--r-sm);padding:12px 14px;border:1px solid var(--line-2)}
+.compare .k{font-size:.78rem;color:var(--ink-2)}
+.compare .v{font-family:var(--f-mono);font-variant-numeric:tabular-nums;font-size:1.15rem;font-weight:500;margin-top:2px}
+.compare .v.hot{color:var(--risk)}
+@media (max-width:560px){.compare{grid-template-columns:1fr}}
+.fine{font-size:.82rem;color:var(--ink-2)}
+.srcbtn{font:inherit;font-size:.8rem;color:var(--accent);background:none;border:0;padding:0;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+
+/* Millage table */
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:460px;font-size:.92rem}
+th,td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--line-2)}
+th{font-family:var(--f-mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);font-weight:500;background:var(--bg)}
+td.r,th.r{text-align:right;font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+tr.tot td{font-weight:700;border-bottom:0;background:var(--bg)}
+tr.grp td{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);background:transparent;padding-top:14px}
+
+/* Checklist */
+.todo{display:grid;gap:0;counter-reset:t;list-style:none;margin:0;padding:0}
+.todo li{border-bottom:1px solid var(--line-2)}
+.todo label{display:grid;grid-template-columns:22px minmax(0,1fr);gap:12px;padding:14px 2px;cursor:pointer}
+.todo input{width:19px;height:19px;margin-top:3px;accent-color:var(--accent)}
+.todo b{display:block;font-weight:600}
+.todo span{color:var(--ink-2);font-size:.92rem}
+.todo li:has(input:checked) b{text-decoration:line-through;text-decoration-color:var(--accent);color:var(--ink-2)}
+.prog{font-family:var(--f-mono);font-size:.82rem;color:var(--ink-2)}
+.peek summary{cursor:pointer;font-size:.88rem;font-weight:600;color:var(--accent)}
+.peek textarea{display:block;width:100%;margin-top:10px;font-family:var(--f-mono);font-size:.82rem;line-height:1.55;color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:var(--r-sm);padding:12px;resize:vertical}
+.prog b{color:var(--accent)}
+
+/* People */
+.people{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+@media (max-width:820px){.people{grid-template-columns:1fr}}
+.person{display:grid;gap:14px;align-content:start}
+.who{display:flex;gap:14px;align-items:center}
+.mono-badge{width:58px;height:58px;border-radius:50%;display:grid;place-items:center;font-family:var(--f-display);font-size:1.35rem;font-weight:600;flex:none;background:var(--deep);color:var(--keys);box-shadow:inset 0 0 0 2px var(--gold)}
+.who h3{font-size:1.45rem}
+.who p{color:var(--ink-2);font-size:.9rem}
+.lic{display:grid;gap:6px;font-size:.88rem;background:var(--bg);border-radius:var(--r-sm);padding:12px 14px;border:1px solid var(--line-2)}
+.lic .mono{font-size:.86rem}
+.contact{display:grid;gap:8px}
+.cline{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.cline .mono{font-size:1rem;user-select:all}
+.copy{font:inherit;font-size:.78rem;font-weight:600;color:var(--accent);background:var(--chip);border:0;border-radius:999px;padding:5px 11px;cursor:pointer}
+.tag{font-family:var(--f-display);font-style:italic;color:var(--ink-2)}
+.tag b{font-style:normal;color:var(--accent);font-weight:600}
+
+/* Village map */
+.map svg{width:100%;height:auto;max-width:100%;display:block}
+
+/* FAQ */
+.faq{display:grid;gap:10px}
+.faq details{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:0 18px}
+.faq summary{cursor:pointer;font-weight:600;padding:15px 0;list-style:none;display:flex;justify-content:space-between;gap:12px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--f-mono);color:var(--accent);font-size:1.2rem;line-height:1}
+.faq details[open] summary::after{content:"\2212"}
+.faq details p{padding:0 0 16px;color:var(--ink-2)}
+
+/* Popovers */
+[popover]{border:1px solid var(--line);border-radius:var(--r);background:var(--surface);color:var(--ink);padding:20px 22px;max-width:min(560px,calc(100vw - 32px));box-shadow:0 24px 60px rgba(10,22,40,.28);font-size:.9rem}
+[popover]::backdrop{background:rgba(10,22,40,.4)}
+[popover] h4{font-family:var(--f-display);font-size:1.15rem;margin:0 0 8px}
+[popover] ul{margin:0;padding-left:18px;display:grid;gap:6px}
+[popover] .x{float:right;font:inherit;background:var(--chip);color:var(--ink);border:0;border-radius:999px;padding:4px 10px;cursor:pointer;margin:-4px -6px 0 10px}
+
+/* Footer */
+footer{background:var(--deep);color:var(--on-deep-2);font-size:.84rem}
+footer .wrap{padding-block:48px;display:grid;gap:22px}
+footer h2{font-size:1.3rem;color:var(--on-deep)}
+footer p{max-width:110ch}
+footer b{color:var(--on-deep);font-weight:600}
+footer a{color:var(--keys)}
+.ehol{display:flex;align-items:center;gap:12px;color:var(--on-deep)}
+.ehol svg{width:40px;height:40px;flex:none}
+.fgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px 32px}
+
+.toast{position:fixed;left:50%;bottom:calc(18px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--deep);color:var(--on-deep);padding:10px 16px;border-radius:999px;font-size:.88rem;box-shadow:0 10px 30px rgba(0,0,0,.25);z-index:20}
+
+/* Motion: soft rise as sections enter, from a visible resting state */
+@media (prefers-reduced-motion:no-preference){
+  @supports (animation-timeline: view()){
+    .card,.tbl,.callout{animation:rise linear both;animation-timeline:view();animation-range:entry 0% entry 40%}
+    @keyframes rise{from{transform:translateY(14px);opacity:.82}to{transform:none;opacity:1}}
+  }
+  .tide path{animation:drift 14s ease-in-out infinite alternate}
+  @keyframes drift{from{transform:translateX(0)}to{transform:translateX(-60px)}}
+  ::view-transition-old(root),::view-transition-new(root){animation-duration:.25s}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.stack span{transition:none}}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "RealEstateListing",
+      "@id": "#listing",
+      "name": "760 Longboat Ct, Longboat Key, FL 34228",
+      "description": "A restored 1920 beach bungalow in the North End Village of Longboat Key, listed at $840,000.",
+      "datePosted": "2026-09-23",
+      "offers": {"@type": "Offer", "price": 840000, "priceCurrency": "USD", "availability": "https://schema.org/InStock", "seller": {"@id": "#agent"}},
+      "about": {
+        "@type": "SingleFamilyResidence",
+        "address": {"@type": "PostalAddress", "streetAddress": "760 Longboat Ct", "addressLocality": "Longboat Key", "addressRegion": "FL", "postalCode": "34228", "addressCountry": "US"},
+        "geo": {"@type": "GeoCoordinates", "latitude": 27.439865, "longitude": -82.683281},
+        "numberOfBathroomsTotal": 2,
+        "floorSize": {"@type": "QuantitativeValue", "value": 1242, "unitCode": "FTK"},
+        "yearBuilt": 1920
+      }
+    },
+    {
+      "@type": "RealEstateAgent",
+      "@id": "#agent",
+      "name": "Jesse Griffin",
+      "telephone": "+1-941-822-6165",
+      "email": "jessegriffin@c21be.com",
+      "parentOrganization": {"@type": "RealEstateAgent", "name": "Century 21 Beggins Enterprises", "address": {"@type": "PostalAddress", "streetAddress": "7000 Gulf of Mexico Drive", "addressLocality": "Longboat Key", "addressRegion": "FL", "postalCode": "34228", "addressCountry": "US"}}
+    },
+    {
+      "@type": "FinancialService",
+      "@id": "#lender",
+      "name": "The Mortgage Dock",
+      "telephone": "+1-305-424-9005",
+      "email": "eli@themortgagedock.com",
+      "url": "https://themortgagedock.com/",
+      "employee": {"@type": "Person", "name": "Eli Sanderlin", "jobTitle": "Mortgage Loan Originator, NMLS #1983384"}
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "#faq",
+      "mainEntity": [
+        {"@type": "Question", "name": "What will the property taxes be at 760 Longboat Ct after a sale?", "acceptedAnswer": {"@type": "Answer", "text": "At the $840,000 list price, a buyer who makes it a Florida homestead should plan on about $10,000 a year in ad valorem taxes, or about $10,770 with a non-ad valorem allowance, using 2025 adopted millage of 14.8362 and an assessed value of 85 percent of price. A second home or investment owner should plan on about $11,370. The seller's 2025 bill of $773 does not carry over."}},
+        {"@type": "Question", "name": "Is 760 Longboat Ct in a flood zone?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Public records place it in FEMA Zone AE, a high-risk Special Flood Hazard Area, on FIRM panel 12081C0291F, effective August 10, 2021. A federally backed mortgage on the home will require flood insurance, and the premium depends mostly on the first-floor height shown on an Elevation Certificate."}},
+        {"@type": "Question", "name": "How much will flood and wind insurance cost?", "acceptedAnswer": {"@type": "Answer", "text": "Plan for a wide range until quotes come in. For a 1920 frame home on a barrier island, wind and homeowners coverage often runs about $5,600 to $10,200 a year before mitigation credits, and NFIP flood coverage commonly runs $3,500 to $12,000 a year depending on elevation. These are planning ranges, not quotes."}},
+        {"@type": "Question", "name": "How does Florida's Amendment 3 affect a buyer here?", "acceptedAnswer": {"@type": "Answer", "text": "Amendment 3 is on the November 3, 2026 ballot and needs 60 percent of the vote. If it passes, the homestead exemption from non-school taxes rises to $150,000 in 2027 and $250,000 in 2028 for owners who are Florida residents by December 31, 2026. People who become Florida residents later would start with a smaller exemption for four years. School taxes keep the $25,000 exemption."}},
+        {"@type": "Question", "name": "Is a jumbo loan needed to buy this home?", "acceptedAnswer": {"@type": "Answer", "text": "Usually not. The 2026 conforming loan limit in Manatee County is $832,750 for a one-unit home, so at the $840,000 list price any down payment of $7,250 or more keeps the loan within conforming limits. Eli Sanderlin can price conventional, VA, jumbo, and portfolio options side by side."}},
+        {"@type": "Question", "name": "Who is the listing agent for 760 Longboat Ct?", "acceptedAnswer": {"@type": "Answer", "text": "Jesse Griffin, a Florida real estate sales associate (license SL3081650) with Century 21 Beggins Enterprises, Longboat Key office at 7000 Gulf of Mexico Drive. Call (941) 822-6165 or email jessegriffin@c21be.com to schedule a private showing."}}
+      ]
+    }
+  ]
+}
+</script>
+
+<header class="bar" aria-label="Page">
+  <div class="wrap">
+    <a class="mark" href="#top">760 Longboat Ct</a>
+    <nav aria-label="Sections">
+      <a href="#cost">Monthly cost</a>
+      <a href="#taxes">Taxes</a>
+      <a href="#insurance">Insurance</a>
+      <a href="#checklist">Before you offer</a>
+      <a href="#village">The Village</a>
+      <a href="#contact">Contact</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a class="cta" href="#contact">Book a showing</a>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero" aria-labelledby="h-addr">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">For sale · North End Village · Longboat Key, Florida</p>
+      <h1 id="h-addr">760 Longboat <em>Court</em></h1>
+      <p class="lede">A restored 1920 beach bungalow in the North End Village. This page works out the numbers most listings leave out, including the property tax a buyer will actually pay, what flood and wind coverage is likely to run, and the true monthly cost.</p>
+      <p class="coords"><span><b>27.43987° N</b> · <b>82.68328° W</b></span><span>Parcel <b>77955-0000-3</b></span><span>Manatee County</span></p>
+      <div class="price-row">
+        <span class="price">$840,000</span>
+        <span class="price-note">Listed Sept 23, 2026 · Active</span>
+      </div>
+      <dl class="plate">
+        <div><dt>Bedrooms</dt><dd>3<sup>*</sup></dd></div>
+        <div><dt>Baths</dt><dd>2</dd></div>
+        <div><dt>Living area</dt><dd>1,242 sq ft</dd></div>
+        <div><dt>Lot</dt><dd>9,409 sq ft</dd></div>
+        <div><dt>Frontage</dt><dd>88 ft</dd></div>
+        <div><dt>Built</dt><dd>1920</dd></div>
+        <div><dt>Garage</dt><dd>2 car</dd></div>
+        <div><dt>Flood zone</dt><dd>AE</dd></div>
+      </dl>
+      <div class="hero-ctas">
+        <a class="btn btn-gold" href="#contact">Schedule a private showing</a>
+        <a class="btn btn-ghost" href="https://themortgagedock.com/strategy?utm_source=listing_site&amp;utm_medium=referral&amp;utm_campaign=760_longboat_ct" target="_blank" rel="noopener">Get my financing quote
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3h8v8M13 3 3 13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></a>
+      </div>
+    </div>
+
+    <div class="chart">
+      <svg viewBox="0 0 360 400" role="img" aria-labelledby="map-t map-d">
+        <title id="map-t">Schematic chart of Longboat Key</title>
+        <desc id="map-d">A not-to-scale sketch of Longboat Key between the Gulf of Mexico and Sarasota Bay, marking 760 Longboat Ct near the north tip on the bay side.</desc>
+        <defs>
+          <linearGradient id="isl" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E9DCC0"/><stop offset="1" stop-color="#CDBB95"/></linearGradient>
+        </defs>
+        <rect x="0" y="0" width="360" height="400" fill="#0A1628" opacity="0"/>
+        <!-- depth contours, Gulf side -->
+        <path d="M58 10 C 92 120, 150 250, 236 398" fill="none" stroke="#2EC4B6" stroke-opacity=".22" stroke-width="1" stroke-dasharray="3 5"/>
+        <path d="M30 10 C 64 130, 124 262, 206 398" fill="none" stroke="#2EC4B6" stroke-opacity=".16" stroke-width="1" stroke-dasharray="3 5"/>
+        <path d="M4 18 C 36 140, 96 272, 176 398" fill="none" stroke="#2EC4B6" stroke-opacity=".1" stroke-width="1" stroke-dasharray="3 5"/>
+        <!-- mainland -->
+        <path d="M300 0 L360 0 L360 400 L330 400 C 318 330, 336 260, 316 190 C 300 130, 322 70, 300 0 Z" fill="#1A3A5C" fill-opacity=".85"/>
+        <!-- Anna Maria tip -->
+        <path d="M62 0 L104 0 C 100 14, 92 26, 82 34 C 76 24, 68 12, 62 0 Z" fill="url(#isl)" fill-opacity=".55"/>
+        <!-- Longboat Key -->
+        <path d="M96 52 C 108 46, 122 48, 130 58 C 156 120, 200 220, 262 352 C 268 366, 266 378, 258 384 C 250 378, 244 370, 238 358 C 180 236, 136 140, 100 74 C 94 66, 92 58, 96 52 Z" fill="url(#isl)"/>
+        <!-- Lido tip -->
+        <path d="M272 400 C 276 392, 282 386, 290 384 C 294 390, 296 396, 296 400 Z" fill="url(#isl)" fill-opacity=".55"/>
+        <!-- soundings -->
+        <g font-family="DM Mono, ui-monospace, monospace" font-size="10" fill="#A9BFCB" fill-opacity=".75">
+          <text x="40" y="96">11</text><text x="22" y="170">14</text><text x="70" y="214">12</text><text x="58" y="288">17</text><text x="128" y="330">15</text><text x="96" y="372">19</text>
+          <text x="196" y="92">5</text><text x="236" y="150">7</text><text x="270" y="236">6</text><text x="214" y="200">4</text><text x="286" y="318">8</text>
+        </g>
+        <g font-family="DM Sans, system-ui, sans-serif" fill="#A9BFCB">
+          <text x="20" y="252" font-size="11" letter-spacing="2" transform="rotate(-62 20 252)">GULF OF MEXICO</text>
+          <text x="232" y="118" font-size="11" letter-spacing="2">SARASOTA BAY</text>
+          <text x="112" y="20" font-size="9" letter-spacing="1.5">LONGBOAT PASS</text>
+          <text x="306" y="214" font-size="9" letter-spacing="1.5" transform="rotate(90 306 214)">MAINLAND</text>
+          <text x="214" y="372" font-size="9" letter-spacing="1.5">NEW PASS</text>
+        </g>
+        <!-- pin -->
+        <g>
+          <circle cx="126" cy="80" r="16" fill="#2EC4B6" fill-opacity=".18"/>
+          <circle cx="126" cy="80" r="6" fill="#C9A84C" stroke="#0A1628" stroke-width="2"/>
+          <path d="M132 76 L 176 52" stroke="#C9A84C" stroke-width="1.2" fill="none"/>
+          <rect x="176" y="36" width="118" height="30" rx="6" fill="#0D2240" stroke="#C9A84C" stroke-width="1"/>
+          <text x="186" y="50" font-family="DM Sans, system-ui, sans-serif" font-size="10.5" font-weight="700" fill="#EAF2F3">760 Longboat Ct</text>
+          <text x="186" y="61" font-family="DM Mono, ui-monospace, monospace" font-size="8.5" fill="#2EC4B6">ZONE AE · BAY SIDE</text>
+        </g>
+        <!-- compass -->
+        <g transform="translate(318 362)">
+          <circle r="16" fill="none" stroke="#A9BFCB" stroke-opacity=".5"/>
+          <path d="M0 -13 L4 0 L0 13 L-4 0 Z" fill="#A9BFCB" fill-opacity=".5"/>
+          <path d="M0 -13 L4 0 L-4 0 Z" fill="#C9A84C"/>
+          <text x="-3.5" y="-19" font-family="DM Mono, monospace" font-size="9" fill="#A9BFCB">N</text>
+        </g>
+        <text x="8" y="394" font-family="DM Mono, ui-monospace, monospace" font-size="8.5" fill="#A9BFCB" fill-opacity=".7">SCHEMATIC · NOT TO SCALE</text>
+      </svg>
+      <div class="allin" aria-live="polite">
+        <div class="k">Estimated all-in monthly cost</div>
+        <div class="v"><span id="hero-total">$0</span> <small>/ month</small></div>
+        <p class="sub" id="hero-sub">Example: 20% down, primary home. <a href="#cost">Change the assumptions</a></p>
+      </div>
+    </div>
+  </div>
+  <svg class="tide" viewBox="0 0 1440 38" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 20 C 120 6, 240 34, 360 20 S 600 6, 720 20 S 960 34, 1080 20 S 1320 6, 1440 20 S 1680 34, 1800 20 L1800 38 L0 38 Z" style="fill:var(--bg)"/>
+  </svg>
+</section>
+
+<!-- Photo gallery: hidden until PHOTOS in the script has entries -->
+<section class="s" id="photos" hidden aria-label="Photos">
+  <div class="wrap"><div class="gallery" id="gallery"></div></div>
+</section>
+
+<section class="s" id="cost" aria-labelledby="h-cost">
+  <div class="wrap s-grid">
+    <div class="rail">
+      <p class="eyebrow">Monthly cost</p>
+      <h2 id="h-cost">The real monthly number</h2>
+      <p>Principal, interest, the post-sale tax bill, flood, and wind in one figure. Every input below is yours to change.</p>
+    </div>
+    <div class="work">
+      <div class="card">
+        <div class="fields">
+          <div class="f">
+            <label for="price">Purchase price</label>
+            <div class="in"><span>$</span><input id="price" inputmode="numeric" value="840,000" aria-describedby="price-h"></div>
+            <small class="fine" id="price-h">List price $840,000</small>
+          </div>
+          <div class="f">
+            <label for="down">Down payment <small id="down-amt"></small></label>
+            <div class="in"><input id="down" inputmode="decimal" value="20"><span>%</span></div>
+            <input type="range" id="down-r" min="0" max="60" step="1" value="20" aria-label="Down payment percent">
+          </div>
+          <div class="f">
+            <label for="rate">Interest rate <small>(example)</small></label>
+            <div class="in"><input id="rate" inputmode="decimal" value="6.625"><span>%</span></div>
+            <small class="fine">Not a quote. Get yours below.</small>
+          </div>
+          <div class="f">
+            <label for="term">Loan term</label>
+            <select id="term"><option value="30" selected>30-year fixed</option><option value="20">20-year fixed</option><option value="15">15-year fixed</option></select>
+          </div>
+          <div class="f">
+            <span class="lbl" id="occ-l">How you'll use it</span>
+            <div class="seg" role="radiogroup" aria-labelledby="occ-l">
+              <label><input type="radio" name="occ" value="primary" checked><span>Primary home</span></label>
+              <label><input type="radio" name="occ" value="second"><span>Second home or rental</span></label>
+            </div>
+          </div>
+          <div class="f">
+            <label for="hoa">HOA or other monthly dues</label>
+            <div class="in"><span>$</span><input id="hoa" inputmode="numeric" value="0"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" aria-live="polite">
+        <div class="big"><span class="v num" id="m-total">$0</span><span class="u">estimated per month</span> <span class="pill" id="loan-type">Conforming</span></div>
+        <div class="stack" id="stack" aria-hidden="true">
+          <span style="background:var(--s1)"></span><span style="background:var(--s2)"></span><span style="background:var(--s3)"></span><span style="background:var(--s4)"></span><span style="background:var(--s5)"></span>
+        </div>
+        <div class="rows">
+          <div class="row"><i style="background:var(--s1)"></i><span class="d">Principal and interest<small id="pi-note"></small></span><span class="n" id="m-pi"></span></div>
+          <div class="row"><i style="background:var(--s2)"></i><span class="d">Property tax, post-sale estimate<small><a href="#taxes">See the tax math</a></small></span><span class="n" id="m-tax"></span></div>
+          <div class="row"><i style="background:var(--s3)"></i><span class="d">Wind and homeowners insurance<small><a href="#insurance">Midpoint of planning range</a></small></span><span class="n" id="m-wind"></span></div>
+          <div class="row"><i style="background:var(--s4)"></i><span class="d">Flood insurance<small><a href="#insurance">Midpoint of planning range</a></small></span><span class="n" id="m-flood"></span></div>
+          <div class="row"><i style="background:var(--s5)"></i><span class="d">Mortgage insurance and dues<small id="pmi-note"></small></span><span class="n" id="m-other"></span></div>
+        </div>
+      </div>
+
+      <div class="two">
+        <div class="callout">
+          <b class="t">Cash at closing, Florida specifics</b>
+          <p>Down payment <b class="num" id="c-down"></b>. Florida also charges two taxes on a new mortgage: documentary stamp tax on the note (0.35%) <b class="num" id="c-doc"></b> and intangible tax (0.2%) <b class="num" id="c-int"></b>. Lender, title, and prepaid costs come on top, itemized on your Loan Estimate.</p>
+        </div>
+        <div class="callout">
+          <b class="t">Loan limit check</b>
+          <p id="limit-msg"></p>
+        </div>
+      </div>
+
+      <div class="card" style="display:grid;gap:14px">
+        <h3>Want real numbers instead of examples?</h3>
+        <p class="hint">Eli Sanderlin at The Mortgage Dock prices conventional, VA, jumbo, and portfolio options for coastal homes and can set escrow from the post-sale tax estimate. Copy this scenario and send it over, or book a time.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:10px">
+          <a class="btn btn-main" href="https://themortgagedock.com/strategy?utm_source=listing_site&amp;utm_medium=referral&amp;utm_campaign=760_longboat_ct" target="_blank" rel="noopener">Get my financing quote</a>
+          <button class="btn btn-line" type="button" id="copy-scn">Copy my scenario</button>
+        </div>
+        <p class="fine">Example figures for illustration only. Not an offer of credit, a rate quote, an APR, or a Loan Estimate. Your rate, APR, and payment depend on credit, program, down payment, and the market on the day you lock. Taxes and insurance are estimates; your actual payment may be higher.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="s" id="taxes" aria-labelledby="h-tax">
+  <div class="wrap s-grid">
+    <div class="rail">
+      <p class="eyebrow">Property tax</p>
+      <h2 id="h-tax">Taxes at the price a buyer pays</h2>
+      <p>Built from Manatee County's adopted millage for the Town of Longboat Key and Florida's 2026 homestead rules.</p>
+      <button class="srcbtn" type="button" popovertarget="src-tax">Where these numbers come from</button>
+    </div>
+    <div class="work">
+      <p class="lead">The seller's 2025 tax bill was <strong>$773</strong>. That figure reflects the current owner's own exemptions and assessment caps, and those end at the sale. Florida resets a home's assessed value to market value on January 1 after it sells, so a buyer's first full bill looks very different.</p>
+
+      <div class="card">
+        <div class="fields">
+          <div class="f">
+            <label for="jv">Appraiser's market value <small>(share of price)</small></label>
+            <select id="jv">
+              <option value="0.85" selected>85% of price (typical)</option>
+              <option value="0.9">90% of price</option>
+              <option value="1">100% of price (cautious)</option>
+            </select>
+          </div>
+          <div class="f">
+            <span class="lbl" id="a3-l">Tax law</span>
+            <div class="seg" role="radiogroup" aria-labelledby="a3-l">
+              <label><input type="radio" name="a3" value="now" checked><span>Current law</span></label>
+              <label><input type="radio" name="a3" value="y27"><span>Amendment 3, 2027</span></label>
+              <label><input type="radio" name="a3" value="y28"><span>Amendment 3, 2028 on</span></label>
+            </div>
+          </div>
+          <div class="f" id="res-f">
+            <label for="res">Florida residency</label>
+            <select id="res">
+              <option value="now" selected>Florida resident by Dec 31, 2026</option>
+              <option value="new">Moving to Florida after that</option>
+            </select>
+          </div>
+          <div class="f" id="port-f">
+            <label for="port">Portability from a current Florida homestead <small>(optional)</small></label>
+            <div class="in"><span>$</span><input id="port" inputmode="numeric" value="0"></div>
+            <small class="fine">Your Save Our Homes benefit, up to $500,000. It's on your TRIM notice.</small>
+          </div>
+          <div class="f">
+            <label for="nav">Non-ad valorem assessments</label>
+            <div class="in"><span>$</span><input id="nav" inputmode="numeric" value="773"></div>
+            <small class="fine">Flat charges like the Town's undergrounding assessment. They don't reset on sale, and they can't exceed the current $773 total bill, so we use that as a ceiling.</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" aria-live="polite">
+        <div class="big"><span class="v num" id="t-year">$0</span><span class="u">estimated per year</span><span class="pill" id="t-mo"></span></div>
+        <div class="compare" style="margin-top:16px">
+          <div><div class="k">Seller's 2025 bill</div><div class="v">$773</div></div>
+          <div><div class="k">Buyer's estimate</div><div class="v" id="t-buyer"></div></div>
+          <div><div class="k">Difference per year</div><div class="v hot" id="t-diff"></div></div>
+        </div>
+        <div class="rows">
+          <div class="row"><i style="background:var(--s1)"></i><span class="d">School levies, 6.3040 mills<small id="t-sch-n"></small></span><span class="n" id="t-sch"></span></div>
+          <div class="row"><i style="background:var(--s2)"></i><span class="d">County, town, and district levies, 8.5322 mills<small id="t-non-n"></small></span><span class="n" id="t-non"></span></div>
+          <div class="row"><i style="background:var(--s5)"></i><span class="d">Non-ad valorem assessments<small>Flat per parcel</small></span><span class="n" id="t-nav"></span></div>
+        </div>
+        <p class="fine" id="t-note" style="margin-top:10px"></p>
+      </div>
+
+      <div class="two">
+        <div class="callout">
+          <b class="t">On the ballot Nov 3, 2026 · Amendment 3</b>
+          <p>If at least 60 percent of voters approve it, the homestead exemption from non-school taxes rises to <b>$150,000 in 2027</b> and <b>$250,000 in 2028</b>. The larger amount goes to owners who are Florida residents by <b>December 31, 2026</b>. Later arrivals start with about $50,000 for four years. School taxes keep the $25,000 exemption. The cap on yearly assessment increases for non-homestead property would drop from 10% to 5%.</p>
+        </div>
+        <div class="callout">
+          <b class="t">Escrow trap to avoid</b>
+          <p>Lenders often set up escrow from the seller's last tax bill. Here that's $773 a year, which would leave a buyer thousands short when the first full bill arrives in November. Ask your lender to build escrow from the post-sale estimate.</p>
+        </div>
+      </div>
+
+      <div class="tbl">
+        <table>
+          <caption class="sr">2025 adopted millage, Bayside district, Town of Longboat Key, Manatee County</caption>
+          <thead><tr><th>Taxing authority</th><th class="r">Mills</th><th class="r">Per $100k taxable</th></tr></thead>
+          <tbody>
+            <tr class="grp"><td colspan="3">School levies</td></tr>
+            <tr><td>Manatee County School Board, required local effort</td><td class="r">3.0560</td><td class="r">$305.60</td></tr>
+            <tr><td>School Board, discretionary operating</td><td class="r">0.7480</td><td class="r">$74.80</td></tr>
+            <tr><td>School Board, capital outlay</td><td class="r">1.5000</td><td class="r">$150.00</td></tr>
+            <tr><td>School Board, voter-approved levy</td><td class="r">1.0000</td><td class="r">$100.00</td></tr>
+            <tr class="grp"><td colspan="3">Non-school levies</td></tr>
+            <tr><td>Manatee County, countywide</td><td class="r">6.0326</td><td class="r">$603.26</td></tr>
+            <tr><td>Town of Longboat Key, operating</td><td class="r">1.9600</td><td class="r">$196.00</td></tr>
+            <tr><td>Town of Longboat Key, facility debt</td><td class="r">0.0380</td><td class="r">$3.80</td></tr>
+            <tr><td>Town of Longboat Key, beach (Bayside)</td><td class="r">0.1391</td><td class="r">$13.91</td></tr>
+            <tr><td>Southwest Florida Water Management District</td><td class="r">0.1831</td><td class="r">$18.31</td></tr>
+            <tr><td>Manatee County Mosquito Control District</td><td class="r">0.1400</td><td class="r">$14.00</td></tr>
+            <tr><td>West Coast Inland Navigation District</td><td class="r">0.0394</td><td class="r">$3.94</td></tr>
+            <tr class="tot"><td>Total</td><td class="r">14.8362</td><td class="r">$1,483.62</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="fine">Rates shown are the 2025 adopted rates. Proposed and adopted 2026 rates (bills mailed November 2026) land within about 0.1 percent of this total: the town's base rate rose to about 1.999 while the Bayside beach levy fell to 0.0957 and the school total to a tentative 6.275, with a new 0.0603 canal levy. District assumed: Bayside, since the parcel sits east of Gulf of Mexico Drive. Confirm on the parcel's TRIM notice.</p>
+    </div>
+  </div>
+</section>
+
+<section class="s" id="insurance" aria-labelledby="h-ins">
+  <div class="wrap s-grid">
+    <div class="rail">
+      <p class="eyebrow">Insurance</p>
+      <h2 id="h-ins">Flood and wind, priced on the facts</h2>
+      <p>Planning ranges built from this home's public record. Use them to budget, then replace them with real quotes during your inspection period.</p>
+      <button class="srcbtn" type="button" popovertarget="src-ins">How the ranges are built</button>
+    </div>
+    <div class="work">
+      <div class="card">
+        <dl class="kv">
+          <div><dt>FEMA zone</dt><dd>AE <span class="pill risk">High risk</span></dd></div>
+          <div><dt>FIRM panel</dt><dd class="mono">12081C0291F</dd></div>
+          <div><dt>Map effective</dt><dd>Aug 10, 2021</dd></div>
+          <div><dt>Construction</dt><dd>Wood frame, 1 story</dd></div>
+          <div><dt>Roof shape on record</dt><dd>Gable/hip</dd></div>
+          <div><dt>Built</dt><dd>1920, pre-FIRM</dd></div>
+        </dl>
+      </div>
+
+      <div class="two">
+        <div class="card" style="display:grid;gap:14px;align-content:start">
+          <h3>Flood insurance</h3>
+          <p class="hint">A federally backed mortgage on a home in Zone AE requires flood coverage. The biggest price driver is how high the first floor sits compared to the Base Flood Elevation, which an Elevation Certificate shows.</p>
+          <div class="f">
+            <label for="flood">First floor compared to Base Flood Elevation</label>
+            <select id="flood">
+              <option value="unknown" selected>Unknown until I see the Elevation Certificate</option>
+              <option value="b3">3 ft or more below</option>
+              <option value="b1">1 to 3 ft below</option>
+              <option value="at">Within 1 ft of BFE</option>
+              <option value="a1">1 to 3 ft above</option>
+              <option value="a3">3 ft or more above</option>
+            </select>
+          </div>
+          <div aria-live="polite">
+            <div class="big"><span class="v num" id="f-range" style="font-size:1.7rem"></span><span class="u">per year, NFIP planning range</span></div>
+            <p class="fine" style="margin-top:6px">For comparison, Manatee County's average Zone AE NFIP premium is $1,614 a year (OpenFEMA, Aug 2026). That average includes many newer, elevated homes.</p>
+          </div>
+          <div class="callout">
+            <b class="t">Two moves that can save real money</b>
+            <p>Ask for the seller's flood policy. An NFIP policy can be assigned to the buyer at closing, which can keep the existing premium instead of restarting at today's full-risk rate. And NFIP building coverage tops out at $250,000, so ask about excess flood if rebuild cost runs higher.</p>
+          </div>
+        </div>
+
+        <div class="card" style="display:grid;gap:14px;align-content:start">
+          <h3>Wind and homeowners</h3>
+          <p class="hint">On a barrier island, the wind portion drives most of the premium. A wind mitigation inspection documents features that earn credits, and a 4-point inspection is standard for older homes.</p>
+          <div class="f">
+            <label for="cov">Dwelling coverage <small>(rebuild cost)</small></label>
+            <div class="in"><span>$</span><input id="cov" inputmode="numeric" value="465,000"></div>
+            <small class="fine">Default: 1,242 sq ft at about $375 per sq ft</small>
+          </div>
+          <div class="f">
+            <label for="roof">Roof age</label>
+            <select id="roof">
+              <option value="new">10 years or newer</option>
+              <option value="mid" selected>11 to 15 years, or not yet known</option>
+              <option value="old">16 years or older</option>
+            </select>
+          </div>
+          <label class="check"><input type="checkbox" id="hip"> Hip roof confirmed by a wind mitigation inspection</label>
+          <label class="check"><input type="checkbox" id="open"> Impact windows or rated shutters on every opening</label>
+          <div aria-live="polite">
+            <div class="big"><span class="v num" id="w-range" style="font-size:1.7rem"></span><span class="u">per year, planning range</span></div>
+          </div>
+          <p class="fine">If wind coverage ends up with Citizens Property Insurance, Florida law also requires a separate flood policy.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="s" id="checklist" aria-labelledby="h-chk">
+  <div class="wrap s-grid">
+    <div class="rail">
+      <p class="eyebrow">Due diligence</p>
+      <h2 id="h-chk">Before you write an offer</h2>
+      <p>The coastal checks that turn estimates into numbers. Your progress saves in this browser.</p>
+      <p class="prog" aria-live="polite"><b id="chk-n">0</b> of <span id="chk-t">9</span> done</p>
+    </div>
+    <div class="work">
+      <div class="card" style="padding-block:8px">
+        <ol class="todo" id="todo">
+          <li><label><input type="checkbox" data-k="ec" data-ask="Elevation Certificate: can you request it from the listing agent? If there isn't one, the Town of Longboat Key may have it on file, or we can have a surveyor prepare one."><div><b>Get the Elevation Certificate</b><span>Ask the seller first. The Town of Longboat Key keeps many on file, or a surveyor can produce one in about a week.</span></div></label></li>
+          <li><label><input type="checkbox" data-k="nfip" data-ask="Seller's flood policy: please request the declarations page and current premium, and ask whether the NFIP policy can be assigned to me at closing."><div><b>Request the seller's flood policy declarations page</b><span>Check the premium, coverage, and whether the policy can be assigned to you at closing.</span></div></label></li>
+          <li><label><input type="checkbox" data-k="insp" data-ask="Inspections: let's schedule a wind mitigation inspection and a 4-point inspection along with the general home inspection."><div><b>Order wind mitigation and 4-point inspections</b><span>Insurers use both. Roof shape, roof-to-wall connections, and opening protection all move the wind premium.</span></div></label></li>
+          <li><label><input type="checkbox" data-k="permits" data-ask="Restoration and permits: please ask the listing agent (Jesse Griffin) for the scope of the restoration, and let's pull the permit history from the Town's building department."><div><b>Review what the restoration covered</b><span>Ask Jesse for the scope of work, and pull the permit history from the Town's building department.</span></div></label></li>
+          <li><label><input type="checkbox" data-k="fp" data-ask="Floodplain rules: can we confirm with the Town what limits apply to future remodels or additions in Zone AE under the FEMA substantial improvement rule?"><div><b>Ask the Town about floodplain rules for future projects</b><span>In Zone AE, large remodels or additions can trigger the FEMA substantial improvement rule, which may require elevating the home. Know the limits before you plan changes.</span></div></label></li>
+          <li><label><input type="checkbox" data-k="quotes" data-ask="Insurance quotes: I want flood and wind quotes in hand before the inspection period ends."><div><b>Get insurance quotes inside your inspection period</b><span>Bind coverage well before closing. Your lender needs proof of flood and wind coverage.</span></div></label></li>
+          <li><label><input type="checkbox" data-k="bill" data-ask="Tax bill: please pull the current Manatee County tax bill so I can see the non-ad valorem assessments."><div><b>Pull the current tax bill</b><span>The Manatee County Tax Collector shows each non-ad valorem line, so you can replace the allowance above with the real figure.</span></div></label></li>
+          <li><label><input type="checkbox" data-k="res" data-ask="Amendment 3 timing: I'm checking my Florida residency date against the December 31, 2026 cutoff with a tax professional, which may affect our closing date."><div><b>Map your residency date against Amendment 3</b><span>If you're moving to Florida, talk with a tax professional about timing before December 31, 2026.</span></div></label></li>
+          <li><label><input type="checkbox" data-k="preapp" data-ask="Financing: I'm getting pre-approved with the post-sale property taxes and insurance built in, not the seller's current $773 tax bill."><div><b>Get pre-approved with real taxes and insurance built in</b><span>A pre-approval that uses the $773 seller bill overstates what you can afford. Ask for one built on the post-sale numbers.</span></div></label></li>
+        </ol>
+      </div>
+      <div class="card" style="display:grid;gap:12px">
+        <h3>Send this list to your agent</h3>
+        <p class="hint">One click copies the whole checklist as a ready-to-send email, with your current estimates and anything you've already checked off. Paste it into an email or text to your agent.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:10px">
+          <button class="btn btn-main" type="button" id="copy-chk">Copy checklist</button>
+          <a class="btn btn-line" id="mail-chk" href="mailto:">Open in email</a>
+        </div>
+        <details class="peek" id="chk-peek"><summary>Preview the email</summary><textarea id="chk-text" readonly rows="16" aria-label="Checklist email text"></textarea></details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="s" id="village" aria-labelledby="h-vil">
+  <div class="wrap s-grid">
+    <div class="rail">
+      <p class="eyebrow">Location</p>
+      <h2 id="h-vil">The North End Village</h2>
+      <p>Older cottages, quiet streets, and Sarasota Bay a short walk away, near the north tip of the key.</p>
+    </div>
+    <div class="work">
+      <p class="lead">760 Longboat Court sits in the Longbeach section of the North End Village, on the bay side of Longboat Key in Manatee County. The lot is 9,409 square feet with 88 feet of frontage, zoned R6SF for single-family use, and recorded in the Revised Longbeach plat. Longboat Pass and the bridge to Anna Maria Island are just north; St. Armands Circle and downtown Sarasota are south along Gulf of Mexico Drive.</p>
+      <div class="card">
+        <dl class="kv">
+          <div><dt>Subdivision</dt><dd>Longbeach on Longboat Key</dd></div>
+          <div><dt>Zoning</dt><dd>R6SF</dd></div>
+          <div><dt>County</dt><dd>Manatee</dd></div>
+          <div><dt>School district</dt><dd>Manatee County</dd></div>
+          <div><dt>Lot</dt><dd>0.22 acre</dd></div>
+          <div><dt>Coordinates</dt><dd class="mono">27.4399, -82.6833</dd></div>
+        </dl>
+      </div>
+      <p><a class="btn btn-line" href="https://www.google.com/maps/search/?api=1&amp;query=760+Longboat+Ct+Longboat+Key+FL+34228" target="_blank" rel="noopener">Open in Google Maps</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="s" id="contact" aria-labelledby="h-con">
+  <div class="wrap s-grid">
+    <div class="rail">
+      <p class="eyebrow">Contact</p>
+      <h2 id="h-con">Tour it, then finance it</h2>
+      <p>Jesse handles showings and the offer. Eli handles the loan side. Licenses below are verified with the State of Florida and NMLS.</p>
+    </div>
+    <div class="work">
+      <div class="people">
+        <article class="card person" aria-labelledby="p-jg">
+          <div class="who">
+            <div class="mono-badge" aria-hidden="true">JG</div>
+            <div><p class="eyebrow">Listing agent</p><h3 id="p-jg">Jesse Griffin</h3><p>Century 21 Beggins Enterprises · Longboat Key</p></div>
+          </div>
+          <div class="contact">
+            <div class="cline"><span class="mono">(941) 822-6165</span><button class="copy" type="button" data-copy="(941) 822-6165">Copy</button><a href="tel:+19418226165">Call</a><a href="sms:+19418226165">Text</a></div>
+            <div class="cline"><span class="mono">jessegriffin@c21be.com</span><button class="copy" type="button" data-copy="jessegriffin@c21be.com">Copy</button><a href="mailto:jessegriffin@c21be.com?subject=Showing%20request%3A%20760%20Longboat%20Ct">Email</a></div>
+          </div>
+          <div class="lic">
+            <div>Florida Real Estate Sales Associate · License <span class="mono">SL3081650</span></div>
+            <div>Status: Current, Active through 03/31/2028 · Licensed since 2004</div>
+            <div>Brokerage: Beggins Enterprises Inc, d/b/a Century 21 Beggins Enterprises · Real Estate Corporation <span class="mono">CQ271428</span></div>
+            <div>Longboat Key office: 7000 Gulf of Mexico Drive, Longboat Key, FL 34228 · Branch <span class="mono">BO2026009</span></div>
+            <div class="fine">Verified with the <a href="https://www.myfloridalicense.com/wl11.asp?mode=0&amp;SID=" target="_blank" rel="noopener">Florida DBPR license search</a> on October 22, 2026. Each office is independently owned and operated.</div>
+          </div>
+        </article>
+
+        <article class="card person" aria-labelledby="p-es">
+          <div class="who">
+            <div class="mono-badge" aria-hidden="true">ES</div>
+            <div><p class="eyebrow">Financing</p><h3 id="p-es">Eli Sanderlin</h3><p>The Mortgage Dock · Mortgage Loan Originator</p></div>
+          </div>
+          <p class="tag">The <b>Edge</b> Behind Every Coastal Closing</p>
+          <div class="contact">
+            <div class="cline"><span class="mono">(305) 424-9005</span><button class="copy" type="button" data-copy="(305) 424-9005">Copy</button><a href="tel:+13054249005">Call</a></div>
+            <div class="cline"><span class="mono">eli@themortgagedock.com</span><button class="copy" type="button" data-copy="eli@themortgagedock.com">Copy</button><a href="mailto:eli@themortgagedock.com?subject=Financing%3A%20760%20Longboat%20Ct">Email</a></div>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;gap:10px">
+            <a class="btn btn-main" href="https://themortgagedock.com/strategy?utm_source=listing_site&amp;utm_medium=referral&amp;utm_campaign=760_longboat_ct" target="_blank" rel="noopener">Get my financing quote</a>
+            <button class="btn btn-line" type="button" data-copyscn>Copy my scenario</button>
+          </div>
+          <div class="lic">
+            <div>Eli Sanderlin · NMLS <a class="mono" href="https://www.nmlsconsumeraccess.org/EntityDetails.aspx/INDIVIDUAL/1983384" target="_blank" rel="noopener">#1983384</a></div>
+            <div>Coast2Coast Mortgage, LLC · NMLS <a class="mono" href="https://www.nmlsconsumeraccess.org/EntityDetails.aspx/COMPANY/376205" target="_blank" rel="noopener">#376205</a></div>
+            <div class="fine">Equal Housing Opportunity. Not a commitment to lend. You are free to choose any lender.</div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="s" id="faq" aria-labelledby="h-faq">
+  <div class="wrap s-grid">
+    <div class="rail">
+      <p class="eyebrow">Questions</p>
+      <h2 id="h-faq">Quick answers</h2>
+    </div>
+    <div class="work faq">
+      <details name="faq" open><summary>What will the property taxes be at 760 Longboat Ct after a sale?</summary><p>At the $840,000 list price, a buyer who makes it a Florida homestead should plan on about $10,000 a year in ad valorem taxes, or about $10,770 with a non-ad valorem allowance, using 2025 adopted millage of 14.8362 and an assessed value of 85 percent of price. A second home or investment owner should plan on about $11,370. The seller's 2025 bill of $773 does not carry over.</p></details>
+      <details name="faq"><summary>Is 760 Longboat Ct in a flood zone?</summary><p>Yes. Public records place it in FEMA Zone AE, a high-risk Special Flood Hazard Area, on FIRM panel 12081C0291F, effective August 10, 2021. A federally backed mortgage on the home will require flood insurance, and the premium depends mostly on the first-floor height shown on an Elevation Certificate.</p></details>
+      <details name="faq"><summary>How much will flood and wind insurance cost?</summary><p>Plan for a wide range until quotes come in. For a 1920 frame home on a barrier island, wind and homeowners coverage often runs about $5,600 to $10,200 a year before mitigation credits, and NFIP flood coverage commonly runs $3,500 to $12,000 a year depending on elevation. These are planning ranges, not quotes.</p></details>
+      <details name="faq"><summary>How does Florida's Amendment 3 affect a buyer here?</summary><p>Amendment 3 is on the November 3, 2026 ballot and needs 60 percent of the vote. If it passes, the homestead exemption from non-school taxes rises to $150,000 in 2027 and $250,000 in 2028 for owners who are Florida residents by December 31, 2026. People who become Florida residents later would start with a smaller exemption for four years. School taxes keep the $25,000 exemption.</p></details>
+      <details name="faq"><summary>Is a jumbo loan needed to buy this home?</summary><p>Usually not. The 2026 conforming loan limit in Manatee County is $832,750 for a one-unit home, so at the $840,000 list price any down payment of $7,250 or more keeps the loan within conforming limits. Eli Sanderlin can price conventional, VA, jumbo, and portfolio options side by side.</p></details>
+      <details name="faq"><summary>Who is the listing agent for 760 Longboat Ct?</summary><p>Jesse Griffin, a Florida real estate sales associate (license SL3081650) with Century 21 Beggins Enterprises, Longboat Key office at 7000 Gulf of Mexico Drive. Call (941) 822-6165 or email jessegriffin@c21be.com to schedule a private showing.</p></details>
+    </div>
+  </div>
+</section>
+</main>
+
+<div popover id="src-tax">
+  <button class="x" type="button" popovertarget="src-tax" popovertargetaction="hide">Close</button>
+  <h4>Tax sources and method</h4>
+  <ul>
+    <li>Millage: Manatee County Property Appraiser, 2025 Final Adopted Millage Rates; Town of Longboat Key FY2026 to FY2027 budget actions as reported by the Longboat Observer.</li>
+    <li>Homestead: $25,000 on all levies plus $26,411 on non-school levies for 2026, per the Florida Department of Revenue inflation adjustment under Amendment 5 (2024).</li>
+    <li>Market value: Florida law (s. 193.011(8), F.S.) has the appraiser account for costs of sale, so assessed market value often lands near 85 percent of a recent price.</li>
+    <li>Amendment 3 (CS/HJR 1F): Florida House staff analysis and county property appraiser FAQs. It is not law unless voters approve it on November 3, 2026.</li>
+    <li>Parcel facts and the seller's 2025 bill: Manatee County Property Appraiser roll via PropertyRadar, retrieved October 22, 2026.</li>
+    <li>This is an estimate, not a tax bill. Confirm with the Manatee County Property Appraiser and Tax Collector.</li>
+  </ul>
+</div>
+<div popover id="src-ins">
+  <button class="x" type="button" popovertarget="src-ins" popovertargetaction="hide">Close</button>
+  <h4>How the insurance ranges are built</h4>
+  <ul>
+    <li>Flood zone, FIRM panel, and map date: FEMA flood map data in the county public record.</li>
+    <li>Flood ranges assume NFIP coverage near the $250,000 building and $100,000 contents limits, scaled by first-floor height, and cross-checked against Longboat Key and Manatee County premium reporting, including OpenFEMA policy data from August 2026.</li>
+    <li>Wind and homeowners ranges use 1.1 to 2.0 percent of dwelling coverage for an older frame home on a barrier island, adjusted for roof age, with credits for a confirmed hip roof and full opening protection applied to the wind share of the premium.</li>
+    <li>These are planning ranges, not insurance quotes. Only a licensed insurance agent can quote coverage.</li>
+  </ul>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="ehol">
+      <svg viewBox="0 0 40 40" role="img" aria-label="Equal Housing Opportunity"><path d="M20 4 3 16v20h34V16Z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><rect x="12" y="19" width="16" height="3.4" fill="currentColor"/><rect x="12" y="26" width="16" height="3.4" fill="currentColor"/></svg>
+      <h2>Equal Housing Opportunity</h2>
+    </div>
+    <div class="fgrid">
+      <p><b>Listing.</b> 760 Longboat Ct, Longboat Key, FL 34228 is listed by Jesse Griffin, Florida Real Estate Sales Associate SL3081650, with Beggins Enterprises Inc, d/b/a Century 21 Beggins Enterprises, Florida Real Estate Corporation CQ271428, 7000 Gulf of Mexico Drive, Longboat Key, FL 34228. Each office is independently owned and operated. Listing information is deemed reliable but not guaranteed and is subject to errors, omissions, price changes, prior sale, or withdrawal without notice. <sup>*</sup>County records show 3 bedrooms; confirm the current layout with the listing agent.</p>
+      <p><b>Financing.</b> Mortgage information provided by Eli Sanderlin, Mortgage Loan Originator, NMLS #1983384, The Mortgage Dock, with Coast2Coast Mortgage, LLC, NMLS #376205. (305) 424-9005 · eli@themortgagedock.com. This is not a commitment to lend or an offer of credit. All loans are subject to credit approval, underwriting, and property eligibility. Rates, terms, and programs change without notice. You are not required to use The Mortgage Dock, or any particular lender, insurance agent, or title company, to buy this home.</p>
+      <p><b>Estimates.</b> Tax, insurance, and payment figures on this page are estimates for planning. They are not a tax bill, an insurance quote, a Loan Estimate, an appraisal, a survey, or an inspection, and they describe the property's physical, environmental, and regulatory characteristics only. Verify everything with the Manatee County Property Appraiser and Tax Collector, licensed insurance agents, the Town of Longboat Key, and your lender. Amendment 3 figures describe a proposal that is not law unless approved by voters.</p>
+      <p><b>Fair housing.</b> We are pledged to the letter and spirit of U.S. policy for the achievement of equal housing opportunity throughout the Nation. We do not discriminate on the basis of race, color, religion, sex, handicap, familial status, or national origin, or any other class protected by federal, state, or local law. This page sets no cookies and runs no trackers.</p>
+    </div>
+    <p class="fine" style="color:var(--on-deep-2)">Data: Manatee County Property Appraiser records via PropertyRadar and ModelMatch (Oct 2026) · FEMA FIRM 12081C0291F · Manatee County 2025 adopted millage · Florida Department of Revenue · OpenFEMA NFIP policies (Aug 2026) · FHFA 2026 conforming limits · Florida DBPR and NMLS license records (Oct 22, 2026). Coastal numbers by The Mortgage Dock and Marina Vale, the intelligence behind every coastal closing.</p>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" hidden></div>
+
+<script>
+(() => {
+  "use strict";
+  // Drop listing photos here as {src, alt} to show the gallery section; it stays hidden while empty.
+  const PHOTOS = [];
+
+  const MILLS_SCHOOL = 6.3040, MILLS_NON = 8.5322;
+  const HX_BASE = 25000, HX_INDEXED_2026 = 26411;
+  const CONFORMING_2026 = 832750;
+  const SELLER_BILL = 773;
+  const FLOOD = { unknown:[3500,12000], b3:[8000,16000], b1:[5000,10000], at:[3000,6000], a1:[1600,3500], a3:[900,2200] };
+  const ROOF = { new:1.0, mid:1.10, old:1.25 };
+  const WIND_LO = 0.011, WIND_HI = 0.020, WIND_SHARE = 0.75;
+
+  const $ = (id) => document.getElementById(id);
+  const usd = new Intl.NumberFormat("en-US", { style:"currency", currency:"USD", maximumFractionDigits:0 });
+  const num = (el) => { const v = parseFloat(String(el.value).replace(/[^0-9.]/g, "")); return Number.isFinite(v) ? v : 0; };
+  const radio = (name) => (document.querySelector(`input[name="${name}"]:checked`) || {}).value;
+  const clamp = (v, lo, hi) => Math.min(hi, Math.max(lo, v));
+
+  function taxes(s) {
+    const jv = s.price * s.jv;
+    let av = jv, exSch = 0, exNon = 0, note = "";
+    if (s.occ === "primary") {
+      av = Math.max(0, jv - clamp(s.port, 0, 500000));
+      exSch = Math.min(av, HX_BASE);
+      if (s.a3 === "now") {
+        exNon = HX_BASE + clamp(av - 50000, 0, HX_INDEXED_2026);
+        note = "Homestead under current law: $25,000 off all levies, plus $26,411 off non-school levies (2026 indexed amount). Apply with the Property Appraiser by March 1 after you move in.";
+      } else if (s.res === "new") {
+        exNon = Math.min(av, 50000);
+        note = "Amendment 3, newer Florida resident: about $50,000 off non-school levies for the first four years, then the larger exemption from year five.";
+      } else {
+        exNon = Math.min(av, s.a3 === "y27" ? 150000 : 250000);
+        note = s.a3 === "y27" ? "Amendment 3 in 2027: $150,000 off non-school levies for a Florida resident by Dec 31, 2026. Only if voters approve it." : "Amendment 3 from 2028: $250,000 off non-school levies for a Florida resident by Dec 31, 2026. Only if voters approve it.";
+      }
+    } else {
+      note = "Second home or rental: no homestead exemption. After the first year, increases in assessed value are capped at 10% a year for non-school levies (5% if Amendment 3 passes).";
+    }
+    const tSch = Math.max(0, av - exSch) * MILLS_SCHOOL / 1000;
+    const tNon = Math.max(0, av - exNon) * MILLS_NON / 1000;
+    return { jv, av, exSch, exNon, tSch, tNon, nav: s.nav, total: tSch + tNon + s.nav, note };
+  }
+
+  function insurance(s) {
+    const fr = FLOOD[s.flood] || FLOOD.unknown;
+    const windFactor = (s.hip ? 0.75 : 1) * (s.open ? 0.80 : 1);
+    const pf = (1 - WIND_SHARE) + WIND_SHARE * windFactor;
+    const age = ROOF[s.roof] || 1.1;
+    const wLo = s.cov * WIND_LO * age * pf, wHi = s.cov * WIND_HI * age * pf;
+    return { fLo: fr[0], fHi: fr[1], fMid: (fr[0] + fr[1]) / 2, wLo, wHi, wMid: (wLo + wHi) / 2 };
+  }
+
+  function mortgage(s) {
+    const loan = s.price * (1 - s.down / 100);
+    const r = s.rate / 1200, n = s.term * 12;
+    const pi = loan <= 0 ? 0 : r > 0 ? loan * r / (1 - Math.pow(1 + r, -n)) : loan / n;
+    const ltv = s.price > 0 ? loan / s.price : 0;
+    const pmiRate = ltv > 0.95 ? 0.0085 : ltv > 0.90 ? 0.0062 : ltv > 0.85 ? 0.0045 : ltv > 0.80 ? 0.0030 : 0;
+    return { loan, pi, ltv, pmi: loan * pmiRate / 12, pmiRate };
+  }
+
+  function read() {
+    const price = num($("price"));
+    return {
+      price, down: clamp(num($("down")), 0, 100), rate: clamp(num($("rate")), 0, 25), term: +$("term").value,
+      occ: radio("occ"), hoa: num($("hoa")),
+      jv: +$("jv").value, a3: radio("a3"), res: $("res").value, port: num($("port")), nav: num($("nav")),
+      flood: $("flood").value, cov: num($("cov")), roof: $("roof").value, hip: $("hip").checked, open: $("open").checked
+    };
+  }
+
+  function tween(el, to) {
+    const from = parseFloat(el.dataset.v || "0");
+    el.dataset.v = to;
+    if (matchMedia("(prefers-reduced-motion: reduce)").matches || !Number.isFinite(from) || Math.abs(to - from) < 1) { el.textContent = usd.format(to); return; }
+    const t0 = performance.now(), d = 420;
+    const step = (t) => { const k = Math.min(1, (t - t0) / d), e = 1 - Math.pow(1 - k, 3); el.textContent = usd.format(from + (to - from) * e); if (k < 1) requestAnimationFrame(step); };
+    requestAnimationFrame(step);
+  }
+
+  let last = null;
+  function render() {
+    const s = read();
+    const t = taxes(s), ins = insurance(s), m = mortgage(s);
+    const parts = [m.pi, t.total / 12, ins.wMid / 12, ins.fMid / 12, m.pmi + s.hoa];
+    const total = parts.reduce((a, b) => a + b, 0);
+    last = { s, t, ins, m, total };
+
+    tween($("m-total"), total);
+    tween($("hero-total"), total);
+    $("hero-sub").innerHTML = `Example: ${s.down}% down, ${s.occ === "primary" ? "primary home" : "second home"}, ${s.rate}% example rate. <a href="#cost">Change the assumptions</a>`;
+    $("m-pi").textContent = usd.format(m.pi);
+    $("m-tax").textContent = usd.format(t.total / 12);
+    $("m-wind").textContent = usd.format(ins.wMid / 12);
+    $("m-flood").textContent = usd.format(ins.fMid / 12);
+    $("m-other").textContent = usd.format(m.pmi + s.hoa);
+    $("pi-note").textContent = `${usd.format(m.loan)} loan, ${s.term} years at ${s.rate}%`;
+    $("pmi-note").textContent = m.pmiRate ? `Mortgage insurance estimated at ${(m.pmiRate * 100).toFixed(2)}% a year below 20% down` : "No mortgage insurance at 20% down or more";
+    $("down-amt").textContent = `(${usd.format(s.price * s.down / 100)})`;
+
+    const stack = $("stack").children;
+    parts.forEach((p, i) => { stack[i].style.flexBasis = total > 0 ? (p / total * 100) + "%" : "0%"; });
+
+    const jumbo = m.loan > CONFORMING_2026;
+    const lt = $("loan-type");
+    lt.textContent = jumbo ? "Jumbo loan" : "Conforming loan";
+    lt.className = "pill " + (jumbo ? "warn" : "good");
+    const minDown = Math.max(0, s.price - CONFORMING_2026);
+    $("limit-msg").innerHTML = jumbo
+      ? `This ${usd.format(m.loan)} loan is above the 2026 Manatee County conforming limit of ${usd.format(CONFORMING_2026)}, so it prices as jumbo. A down payment of ${usd.format(minDown)} or more brings it under the limit.`
+      : `This ${usd.format(m.loan)} loan fits under the 2026 Manatee County conforming limit of ${usd.format(CONFORMING_2026)}. At this price, any down payment of ${usd.format(minDown)} or more stays conforming.`;
+    $("c-down").textContent = usd.format(s.price * s.down / 100);
+    $("c-doc").textContent = usd.format(m.loan * 0.0035);
+    $("c-int").textContent = usd.format(m.loan * 0.002);
+
+    tween($("t-year"), t.total);
+    $("t-mo").textContent = usd.format(t.total / 12) + " / mo";
+    $("t-buyer").textContent = usd.format(t.total);
+    $("t-diff").textContent = "+" + usd.format(Math.max(0, t.total - SELLER_BILL));
+    $("t-sch").textContent = usd.format(t.tSch);
+    $("t-non").textContent = usd.format(t.tNon);
+    $("t-nav").textContent = usd.format(t.nav);
+    $("t-sch-n").textContent = `Taxable ${usd.format(Math.max(0, t.av - t.exSch))} after ${usd.format(t.exSch)} exemption`;
+    $("t-non-n").textContent = `Taxable ${usd.format(Math.max(0, t.av - t.exNon))} after ${usd.format(t.exNon)} exemption`;
+    $("t-note").textContent = `Assessed value ${usd.format(t.av)} (${Math.round(s.jv * 100)}% of ${usd.format(s.price)}${s.occ === "primary" && s.port > 0 ? ", less portability" : ""}). ${t.note}`;
+
+    const homestead = s.occ === "primary";
+    document.querySelectorAll('input[name="a3"]').forEach((r) => { if (r.value !== "now") r.disabled = !homestead; });
+    if (!homestead && s.a3 !== "now") document.querySelector('input[name="a3"][value="now"]').checked = true;
+    $("res-f").hidden = !(homestead && s.a3 !== "now");
+    $("port-f").hidden = !homestead;
+
+    $("f-range").textContent = `${usd.format(ins.fLo)} to ${usd.format(ins.fHi)}`;
+    $("w-range").textContent = `${usd.format(ins.wLo)} to ${usd.format(ins.wHi)}`;
+    syncChecklistEmail();
+  }
+
+  const update = () => (document.startViewTransition && !matchMedia("(prefers-reduced-motion: reduce)").matches ? document.startViewTransition(render) : render());
+
+  document.querySelectorAll("input, select").forEach((el) => {
+    if (el.closest("#todo")) return;
+    el.addEventListener(el.type === "range" || el.tagName === "SELECT" || el.type === "radio" || el.type === "checkbox" ? "change" : "input", el.type === "radio" ? update : render);
+  });
+  $("down-r").addEventListener("input", () => { $("down").value = $("down-r").value; render(); });
+  $("down").addEventListener("input", () => { $("down-r").value = clamp(num($("down")), 0, 60); });
+  ["price", "cov", "port", "nav", "hoa"].forEach((id) => {
+    $(id).addEventListener("blur", () => { const v = num($(id)); $(id).value = v ? v.toLocaleString("en-US") : "0"; });
+  });
+
+  // Copy helpers
+  const toast = (msg) => { const t = $("toast"); t.textContent = msg; t.hidden = false; clearTimeout(toast.h); toast.h = setTimeout(() => (t.hidden = true), 2200); };
+  async function copy(text, label) {
+    try { await navigator.clipboard.writeText(text); toast(label + " copied"); }
+    catch (e) {
+      const ta = document.createElement("textarea"); ta.value = text; ta.setAttribute("readonly", ""); ta.style.position = "fixed"; ta.style.opacity = "0";
+      document.body.appendChild(ta); ta.select();
+      let ok = false; try { ok = document.execCommand("copy"); } catch (_) {}
+      ta.remove(); toast(ok ? label + " copied" : "Select the text to copy it");
+    }
+  }
+  document.querySelectorAll("[data-copy]").forEach((b) => b.addEventListener("click", () => copy(b.dataset.copy, b.dataset.copy)));
+  function scenario() {
+    const { s, t, ins, m, total } = last;
+    return [
+      "760 Longboat Ct, Longboat Key, FL 34228 · financing scenario",
+      `Price ${usd.format(s.price)} · ${s.down}% down (${usd.format(s.price * s.down / 100)}) · loan ${usd.format(m.loan)} · ${s.term}-yr at ${s.rate}% example rate`,
+      `Use: ${s.occ === "primary" ? "primary home" : "second home or rental"}${s.occ === "primary" ? " · " + (s.res === "now" ? "FL resident by 12/31/2026" : "moving to FL after 2026") : ""}`,
+      `Est. monthly: P&I ${usd.format(m.pi)} · tax ${usd.format(t.total / 12)} · wind ${usd.format(ins.wMid / 12)} · flood ${usd.format(ins.fMid / 12)} · MI/dues ${usd.format(m.pmi + s.hoa)} · total ${usd.format(total)}`,
+      "Please send me real numbers. Send to eli@themortgagedock.com or text (305) 424-9005."
+    ].join("\n");
+  }
+  $("copy-scn").addEventListener("click", () => copy(scenario(), "Scenario"));
+  document.querySelectorAll("[data-copyscn]").forEach((b) => b.addEventListener("click", () => copy(scenario(), "Scenario")));
+
+  // Checklist, saved per browser
+  const KEY = "lbk760-checklist";
+  let saved = {};
+  try { saved = JSON.parse(localStorage.getItem(KEY) || "{}") || {}; } catch (e) { saved = {}; }
+  const boxes = document.querySelectorAll("#todo input");
+  const tally = () => { $("chk-n").textContent = [...boxes].filter((b) => b.checked).length; $("chk-t").textContent = boxes.length; };
+  boxes.forEach((b) => {
+    b.checked = !!saved[b.dataset.k];
+    b.addEventListener("change", () => { saved[b.dataset.k] = b.checked; try { localStorage.setItem(KEY, JSON.stringify(saved)); } catch (e) {} tally(); });
+  });
+  tally();
+
+  // Checklist as an email to the buyer's agent
+  function checklistEmail() {
+    const lines = [...boxes].map((b, i) => `${i + 1}. ${b.dataset.ask}${b.checked ? " [done]" : ""}`);
+    const est = last ? `My working estimates: property tax about ${usd.format(last.t.total)} a year after the sale, flood insurance ${usd.format(last.ins.fLo)} to ${usd.format(last.ins.fHi)} a year, wind and homeowners ${usd.format(last.ins.wLo)} to ${usd.format(last.ins.wHi)} a year, and about ${usd.format(last.total)} a month all in.` : "";
+    const subject = "760 Longboat Ct: items to cover before we write an offer";
+    const body = [
+      "Hi,", "",
+      "I'm looking at 760 Longboat Ct, Longboat Key, FL 34228, listed at $840,000. It's a 1920 home in flood zone AE, so before we write an offer I'd like to cover these:", "",
+      ...lines, "", est, "",
+      "Can you let me know which of these you can request from the listing agent, and how quickly?", "",
+      "Thanks,"
+    ].join("\n");
+    return { subject, body };
+  }
+  function syncChecklistEmail() {
+    const e = checklistEmail();
+    $("chk-text").value = `Subject: ${e.subject}\n\n${e.body}`;
+    $("mail-chk").href = `mailto:?subject=${encodeURIComponent(e.subject)}&body=${encodeURIComponent(e.body)}`;
+  }
+  boxes.forEach((b) => b.addEventListener("change", syncChecklistEmail));
+  $("copy-chk").addEventListener("click", async () => {
+    syncChecklistEmail();
+    const text = $("chk-text").value;
+    try { await navigator.clipboard.writeText(text); toast("Checklist copied. Paste it into an email to your agent."); }
+    catch (e) { $("chk-peek").open = true; const ta = $("chk-text"); ta.focus(); ta.select(); toast("Text selected. Press copy to finish."); }
+  });
+
+  // Optional photo gallery
+  if (PHOTOS.length) {
+    const g = $("gallery");
+    g.style.cssText = "display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px";
+    PHOTOS.forEach((p) => { const i = new Image(); i.src = p.src; i.alt = p.alt || ""; i.loading = "lazy"; i.style.cssText = "width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;max-width:100%"; g.appendChild(i); });
+    $("photos").hidden = false;
+  }
+
+  render();
+})();
+</script>
