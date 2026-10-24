@@ -9,6 +9,7 @@ can do now, ready to publish on **themortgagedock.com**.
 |------|------------|---------------|
 | `marina-vale-section.html` | A self-contained, brand-styled "Meet Marina Vale" section (inline CSS, no dependencies). | Paste into a page on your Netlify site, or open in a browser to preview. Drop-in ready. |
 | `marina-vale-copy.md` | Plain copy blocks — one-liner, short bio, full description, capability bullets, tool list, disclaimer. | Copy/paste the block that fits wherever your site editor needs text. |
+| `intelligence/` | Tracking, Realtor referral and lead intelligence: audit and proposed plan (2026-10-24). | Read `intelligence/README.md` first. Proposal only; nothing built. |
 
 ## Source of truth
 
